@@ -1,13 +1,22 @@
-import { useState } from 'react'
-import logo from './logo.svg'
+import NavBar from './components/NavBar'
+import HeroSection from './components/HeroSection'
+import TabSection from './components/TabSection'
+import CardSlider from './components/CardSlider'
+import CardGrid from './components/CardGrid'
+import Footer from './components/Footer'
+
 import './index.css'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <div className="App bg-primary">
-      <h1 className='text-white text-7xl font-bold text-center flex min-h-screen items-center justify-center'>Vite + React + Tailwind</h1>
+    <div>
+      <NavBar />
+      {/* <HeroSection/>
+      <TabSection />
+      <CardSlider/>
+      <CardGrid />
+      <Footer/> */}
     </div>
   )
 }
