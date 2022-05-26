@@ -1,9 +1,14 @@
 module.exports = {
   content: [
     "./index.html",
-    "./src/**/*.{vue,js,ts,jsx,tsx}",
+    "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  // darkMode: 'class',
   theme: {
+    fontFamily: {
+      'default': ['Poppins', 'sans-serif'],
+      'display': ['Krona One', 'sans-serif'],
+    },
     extend: {
       "colors": {
         "primary": {
