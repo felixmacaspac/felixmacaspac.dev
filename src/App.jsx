@@ -11,8 +11,8 @@ function App() {
   return (
     <div>
       <NavBar />
-
-      {/* <HeroSection/>
+      <HeroSection />
+      {/* 
       <TabSection />
       <CardSlider/>
       <CardGrid />

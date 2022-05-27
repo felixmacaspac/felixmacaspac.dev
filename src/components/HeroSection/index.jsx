@@ -2,9 +2,13 @@ import React from "react";
 
 const HeroSection = () => {
   return (
-    <h1 className="text-display flex items-center justify-center text-9xl text-white min-h-screen font-display bg-primary">
-      Felix M.
-    </h1>
+    <div className="bg-primary">
+      <div className="container">
+        <div className="flex items-center justify-center min-h-[70vh] md:min-h-screen">
+          <h1 className="hero__heading">Felix M.</h1>
+        </div>
+      </div>
+    </div>
   );
 };
 

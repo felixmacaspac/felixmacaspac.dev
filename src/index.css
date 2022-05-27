@@ -7,3 +7,19 @@
     @apply font-default;
   }
 }
+
+@layer components {
+  .hero__heading {
+    @apply text-5xl text-white font-display relative sm:text-7xl md:text-9xl;
+  }
+
+  .hero__heading::before {
+    @apply text-xs text-neutral text-opacity-80 font-medium font-default absolute -top-6 -left-2 sm:text-base;
+    content: "I AM";
+  }
+
+  .hero__heading::after {
+    @apply text-xs text-neutral text-opacity-80 font-medium font-default absolute -bottom-6 -right-10 sm:text-base;
+    content: "FRONT-END DEVELOPER";
+  }
+}
