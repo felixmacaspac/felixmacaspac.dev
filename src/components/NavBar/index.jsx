@@ -4,7 +4,9 @@ import React from "react";
 import { Fragment } from "react";
 import { Popover, Transition } from "@headlessui/react";
 import { XIcon, MenuAlt1Icon } from "@heroicons/react/outline";
-import { MoonIcon } from "@heroicons/react/solid";
+import { MoonIcon, SunIcon } from "@heroicons/react/solid";
+
+import useDarkMode from "../../hooks/useDarkMode";
 
 const navlinks = [
   {
@@ -30,12 +32,15 @@ const navlinks = [
 ];
 
 export default function NavBar() {
+  const [darkTheme, setDarkTheme] = useDarkMode();
+  const handleMode = () => setDarkTheme(!darkTheme);
+
   return (
-    <Popover className="bg-primary fixed top-0 w-full z-50">
+    <Popover className="fixed top-0 w-full z-50 bg-white dark:bg-primary">
       <div className="container">
         <div className="flex justify-end items-center px-4 py-6 sm:px-6 md:justify-start md:gap-12">
           <div className="-mr-2 -my-2 md:hidden">
-            <Popover.Button className="rounded-md p-2 inline-flex items-center justify-center text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-secondary">
+            <Popover.Button className="rounded-md p-2 inline-flex items-center justify-center text-primary focus:outline-none focus:ring-2 focus:ring-inset focus:ring-secondary dar:text-white">
               <span className="sr-only">Open menu</span>
               <MenuAlt1Icon
                 className="h-6 w-6 transform rotate-180"
@@ -48,14 +53,22 @@ export default function NavBar() {
               <a
                 key={navlink.name}
                 href={navlink.href}
-                className="text-base font-medium text-white hover:text-neutral"
+                className="text-base font-medium text-primary dark:hover:text-neutral dark:text-white"
               >
                 {navlink.name}
               </a>
             ))}
           </Popover.Group>
-          <div className="ml-auto text-white hidden md:block">
-            <MoonIcon className="h-6 w-6 cursor-pointer" />
+
+          <div
+            className="ml-auto text-primary hidden transition-opacity md:block dark:text-white"
+            onClick={handleMode}
+          >
+            {darkTheme ? (
+              <SunIcon className="h-6 w-6 cursor-pointer opacity-100" />
+            ) : (
+              <MoonIcon className="h-6 w-6 cursor-pointer opacity-100" />
+            )}
           </div>
         </div>
 
