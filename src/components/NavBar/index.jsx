@@ -38,9 +38,9 @@ export default function NavBar() {
   return (
     <Popover className="fixed top-0 w-full z-50 bg-white dark:bg-primary">
       <div className="container">
-        <div className="flex justify-end items-center px-4 py-6 sm:px-6 md:justify-start md:gap-12">
+        <div className="flex justify-end items-center px-4 py-6 gap-4 sm:px-6 md:justify-start lg::gap-12">
           <div className="-mr-2 -my-2 md:hidden">
-            <Popover.Button className="rounded-md p-2 inline-flex items-center justify-center text-primary focus:outline-none focus:ring-2 focus:ring-inset focus:ring-secondary dar:text-white">
+            <Popover.Button className="rounded-md p-2 inline-flex items-center justify-center text-primary focus:outline-none focus:ring-2 focus:ring-inset focus:ring-secondary dark:text-white">
               <span className="sr-only">Open menu</span>
               <MenuAlt1Icon
                 className="h-6 w-6 transform rotate-180"
@@ -48,7 +48,10 @@ export default function NavBar() {
               />
             </Popover.Button>
           </div>
-          <Popover.Group as="nav" className="hidden md:flex space-x-10">
+          <Popover.Group
+            as="nav"
+            className="hidden space-x-6 md:flex lg:space-x-10"
+          >
             {navlinks.map((navlink) => (
               <a
                 key={navlink.name}
@@ -61,7 +64,7 @@ export default function NavBar() {
           </Popover.Group>
 
           <div
-            className="ml-auto text-primary hidden transition-opacity md:block dark:text-white"
+            className="ml-auto text-primary hidden transition-opacity md:mr-4 md:block dark:text-white"
             onClick={handleMode}
           >
             {darkTheme ? (
@@ -70,6 +73,12 @@ export default function NavBar() {
               <MoonIcon className="h-6 w-6 cursor-pointer opacity-100" />
             )}
           </div>
+          <a
+            className="bg-secondary-400 justify-center font-semibold text-center px-4 py-3 rounded-xl text-white dark:bg-secondary dark:hover:bg-secondary-400 dark:active:scale-105 transition-all duration-300 hidden md:flex lg:w-[150px]"
+            href="#"
+          >
+            Say Hi! 👋
+          </a>
         </div>
 
         <Transition
@@ -85,11 +94,18 @@ export default function NavBar() {
             focus
             className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden"
           >
-            <div className="rounded-lg shadow-lg bg-primary-700 filter drop-shadow-lg">
+            <div className="rounded-lg shadow-lg filter drop-shadow-lg bg-primary-700">
               <div className="pt-5 pb-6 px-5">
                 <div className="flex items-center justify-between">
-                  <div className="text-white block">
-                    <MoonIcon className="h-6 w-6 cursor-pointer" />
+                  <div
+                    className="text-primary transition-opacity block dark:text-white"
+                    onClick={handleMode}
+                  >
+                    {darkTheme ? (
+                      <SunIcon className="h-6 w-6 cursor-pointer opacity-100 text-white" />
+                    ) : (
+                      <MoonIcon className="h-6 w-6 cursor-pointer opacity-100 text-white" />
+                    )}
                   </div>
                   <div className="-mr-2">
                     <Popover.Button className="rounded-md p-2 inline-flex items-center justify-center text-white hover:bg-primary-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-secondary">
@@ -110,6 +126,14 @@ export default function NavBar() {
                       </a>
                     ))}
                   </nav>
+                  <div className="mt-10">
+                    <a
+                      className="bg-secondary-400 text-center font-semibold px-4 py-3 rounded-xl text-white dark:bg-secondary dark:hover:bg-secondary-400 dark:active:scale-105 transition-all duration-300 flex justify-center items-center w-full"
+                      href="#"
+                    >
+                      Say Hi! 👋
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
