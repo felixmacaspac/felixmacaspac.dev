@@ -23,6 +23,15 @@ module.exports = {
         },
         secondary: {
           DEFAULT: "#663EFF",
+          50: "#EFEBFF",
+          100: "#DED6FF",
+          200: "#C2B3FF",
+          300: "#A18AFF",
+          400: "#8566FF",
+          500: "#3300FF",
+          600: "#2600BD",
+          700: "#1A0080",
+          800: "#0C003D",
         },
         neutral: {
           DEFAULT: "#EEEEEE",
@@ -31,6 +40,9 @@ module.exports = {
     },
     container: {
       center: true, // serves as margin-inline: auto;
+      padding: {
+        DEFAULT: "1rem",
+      },
       screens: {
         "2xl": "1440px",
       },
