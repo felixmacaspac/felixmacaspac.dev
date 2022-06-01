@@ -12,8 +12,8 @@ function App() {
     <div>
       <NavBar />
       <HeroSection />
-      {/* 
       <TabSection />
+      {/* 
       <CardSlider/>
       <CardGrid />
       <Footer/> */}

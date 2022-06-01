@@ -27,3 +27,7 @@
     content: "FRONT-END DEVELOPER";
   }
 }
+
+.react-tabs__tab--selected {
+  @apply bg-secondary;
+}
