@@ -29,5 +29,5 @@
 }
 
 .react-tabs__tab--selected {
-  @apply bg-secondary;
+  @apply bg-secondary-400 dark:bg-secondary;
 }

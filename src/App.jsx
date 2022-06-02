@@ -6,18 +6,22 @@ import CardGrid from "./components/CardGrid";
 import Footer from "./components/Footer";
 
 import "./index.css";
+import SectionWrapper from "./components/Global/SectionWrapper";
 
 function App() {
   return (
-    <div>
+    <>
       <NavBar />
       <HeroSection />
-      <TabSection />
+
+      <SectionWrapper id="about" heading="ABOUT ME">
+        <TabSection />
+      </SectionWrapper>
       {/* 
       <CardSlider/>
       <CardGrid />
       <Footer/> */}
-    </div>
+    </>
   );
 }
 
