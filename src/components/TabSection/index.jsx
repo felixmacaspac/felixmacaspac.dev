@@ -42,11 +42,11 @@ const TabSection = () => {
   return (
     <>
       <Tabs defaultIndex={0} className="container">
-        <TabList className="bg-primary flex flex-col justify-center gap-4 items-center mx-auto rounded-xl mb-16 w-full dark:bg-primary-500 md:w-max md:flex-row">
-          <Tab className="text-white w-full text-center cursor-pointer rounded-xl px-8 py-4 font-semibold focus-within:bg-secondary-400 md:w-max dark:focus-within:bg-secondary">
+        <TabList className="bg-primary flex flex-col justify-center items-center mx-auto rounded-xl mb-16 w-full dark:bg-primary-500 md:w-max md:flex-row">
+          <Tab className="text-white w-full text-center cursor-pointer px-8 py-4 font-semibold focus-within:bg-secondary-400 md:w-max dark:focus-within:bg-secondary rounded-t-xl md:rounded-l-xl md:rounded-tr-none">
             Know me more
           </Tab>
-          <Tab className="text-white w-full text-center cursor-pointer rounded-xl px-8 py-4 font-semibold focus-within:bg-secondary-400 md:w-max dark:focus-within:bg-secondary">
+          <Tab className="text-white w-full text-center cursor-pointer  px-8 py-4 font-semibold focus-within:bg-secondary-400 md:w-max dark:focus-within:bg-secondary rounded-t-none rounded-b-xl md:rounded-l-none md:rounded-r-xl">
             Technical Skills
           </Tab>
         </TabList>
@@ -65,9 +65,10 @@ const TabSection = () => {
           </div>
           <div className="w-full md:w-1/2 md:h-[450px]">
             <img
-              src="/src/assets/whacky-felix.png"
+              src={images.felixImage}
               className="h-full w-full object-cover object-top rounded-lg filter shadow-lg"
-              alt=""
+              alt="Image Felix"
+              loading="lazy"
             />
           </div>
         </TabPanel>
@@ -83,6 +84,7 @@ const TabSection = () => {
                     className="h-14 object-contain dark:filter dark:invert"
                     src={logo.image}
                     alt={logo.title}
+                    loading="lazy"
                   />
                   <h6 className="text-xl font-semibold text-primary dark:text-white">
                     {logo.title}

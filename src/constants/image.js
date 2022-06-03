@@ -11,6 +11,8 @@ import githubLogo from "../assets/logo/github-logo.svg";
 import nextLogo from "../assets/logo/next-logo.svg";
 import hubspotLogo from "../assets/logo/hubspot-logo.svg";
 
+import felixImage from "../assets/whacky-felix.png";
+
 export default {
   emailIcon,
   githubIcon,
@@ -24,4 +26,5 @@ export default {
   githubLogo,
   nextLogo,
   hubspotLogo,
+  felixImage,
 };
