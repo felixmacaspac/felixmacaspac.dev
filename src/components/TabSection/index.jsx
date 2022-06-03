@@ -41,7 +41,7 @@ const logos = [
 const TabSection = () => {
   return (
     <>
-      <Tabs defaultIndex={0} className="container">
+      <Tabs defaultIndex={0}>
         <TabList className="bg-primary flex flex-col justify-center items-center mx-auto rounded-xl mb-16 w-full dark:bg-primary-500 md:w-max md:flex-row">
           <Tab className="text-white w-full text-center cursor-pointer px-8 py-4 font-semibold focus-within:bg-secondary-400 md:w-max dark:focus-within:bg-secondary rounded-t-xl md:rounded-l-xl md:rounded-tr-none">
             Know me more
