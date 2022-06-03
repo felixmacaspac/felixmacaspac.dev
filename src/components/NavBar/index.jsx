@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 /* This example requires Tailwind CSS v2.0+ */
 import { Fragment } from "react";
@@ -35,8 +35,29 @@ export default function NavBar() {
   const [darkTheme, setDarkTheme] = useDarkMode();
   const handleMode = () => setDarkTheme(!darkTheme);
 
+  const [addBlur, setAddBlur] = useState(true);
+
+  const addBlurScroll = () => {
+    if (window.scrollY > 100) {
+      setAddBlur(true);
+    } else {
+      setAddBlur(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", addBlurScroll);
+    return () => {
+      window.removeEventListener("scroll", addBlurScroll);
+    };
+  }, []);
+
   return (
-    <Popover className="fixed top-0 w-full z-50 bg-white dark:bg-primary">
+    <Popover
+      className={` ${
+        addBlur && "drop-shadow-lg"
+      } fixed top-0 w-full z-50 bg-white transition-all dark:bg-primary`}
+    >
       <div className="container">
         <div className="flex justify-end items-center px-4 py-6 gap-4 sm:px-6 md:justify-start lg::gap-12">
           <div className="-mr-2 -my-2 md:hidden">
