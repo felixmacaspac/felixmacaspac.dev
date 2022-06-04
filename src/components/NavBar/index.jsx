@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 /* This example requires Tailwind CSS v2.0+ */
 import { Fragment } from "react";
-import { Popover, Transition } from "@headlessui/react";
+import { Popover, Transition, Dialog } from "@headlessui/react";
 import { XIcon, MenuAlt1Icon } from "@heroicons/react/outline";
 import { MoonIcon, SunIcon } from "@heroicons/react/solid";
 

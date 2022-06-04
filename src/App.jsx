@@ -2,7 +2,6 @@ import NavBar from "./components/NavBar";
 import HeroSection from "./components/HeroSection";
 import TabSection from "./components/TabSection";
 import TwoColumnCard from "./components/TwoColumnCard";
-import CardSlider from "./components/CardSlider";
 import CardGrid from "./components/CardGrid";
 import Footer from "./components/Footer";
 
@@ -19,12 +18,19 @@ function App() {
         <TabSection />
       </SectionWrapper>
 
-      <SectionWrapper id="experience" heading="Experience">
+      <SectionWrapper id="experience" heading="EXPERIENCE">
         <TwoColumnCard />
       </SectionWrapper>
+
+      <SectionWrapper
+        id="projects"
+        textCenter={true}
+        heading="RECENT PROJECTS"
+        fullWidth={true}
+      >
+        <CardGrid />
+      </SectionWrapper>
       {/* 
-      <CardSlider/>
-      <CardGrid />
       <Footer/> */}
     </>
   );

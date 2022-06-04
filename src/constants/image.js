@@ -13,6 +13,11 @@ import hubspotLogo from "../assets/logo/hubspot-logo.svg";
 
 import felixImage from "../assets/whacky-felix.png";
 
+import bluecheckImage from "../assets/certificates/bluecheck-visible.png";
+import catifyImage from "../assets/certificates/catify-visible.png";
+import shortlyImage from "../assets/certificates/shortly-visible.png";
+import sunnysideImage from "../assets/certificates/sunnyside-visible.png";
+
 export default {
   emailIcon,
   githubIcon,
@@ -27,4 +32,8 @@ export default {
   nextLogo,
   hubspotLogo,
   felixImage,
+  bluecheckImage,
+  catifyImage,
+  shortlyImage,
+  sunnysideImage,
 };
