@@ -2,6 +2,7 @@ import React from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import images from "../../constants/image";
+import { ExternalLinkIcon } from "@heroicons/react/solid";
 
 const logos = [
   {
@@ -52,16 +53,62 @@ const TabSection = () => {
         </TabList>
         <TabPanel className="flex gap-20 items-center flex-col-reverse md:flex-row-reverse transition-all">
           <div className="w-full text-primary md:w-1/2 dark:text-white">
-            <h2 className="text-2xl font-semibold mb-5">
-              Hello! Kumusta? I'm a self-taught developer️
+            <h2 className="text-2xl font-semibold mb-2">
+              React Developer | HubSpot CMS Developer
             </h2>
-            <p className="text-base font-normal">
-              I started self-studying programming during the pandemic (2020) as
-              a hobby. Landed my first internship job after studying for 10
-              months! Currently working as a Junior Frontend Developer. Still
-              learning and getting passionate about new interesting stuff in the
-              web development industry.
+            <p className="text-base font-normal text-neutral-700 dark:text-neutral-300">
+              I've been into front-end development for almost ONE year & working
+              professionally for almost TEN months, still learning, and failing.
             </p>
+            <br />
+            <h3 className="font-semibold text-xl mb-2">
+              How can I help you 🔨 :
+            </h3>
+            <ul className="list-inside list-disc text-neutral-700 dark:text-neutral-300">
+              <li>
+                I'll help you convert your Figma/PSD/XD design into a perfect
+                pixel-responsive website or landing page. ✨
+              </li>
+              <li>
+                I'll help you fix bugs/issues that have something to do with
+                HTML, CSS & JS. 🐛
+              </li>
+              <li>
+                I'll help you implement new features on your current website. 👷{" "}
+              </li>
+              <li>
+                I'll help you create new modules/templates for your HubSpot CMS
+                Website 🎉
+              </li>
+            </ul>
+            <br />
+            <h3 className="font-semibold text-xl mb-2">Certifications 📝:</h3>
+            <ul className="list-inside list-disc text-neutral-700 dark:text-neutral-300">
+              <li>
+                <a href="#" className="underline">
+                  Hubspot Marketing Software
+                  <span className="ml-1 inline-flex align-middle">
+                    <ExternalLinkIcon className="h-5 w-5" />
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="#" className="underline">
+                  Hubspot CMS for Developers
+                </a>
+                <span className="ml-1 inline-flex align-middle">
+                  <ExternalLinkIcon className="h-5 w-5" />
+                </span>
+              </li>
+              <li>
+                <a href="#" className="underline">
+                  Hubspot CMS for Marketers
+                </a>
+                <span className="ml-1 inline-flex align-middle">
+                  <ExternalLinkIcon className="h-5 w-5" />
+                </span>
+              </li>
+            </ul>
           </div>
           <div className="w-full md:w-1/2 md:h-[450px]">
             <img
