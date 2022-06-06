@@ -15,7 +15,7 @@ const SectionWrapper = ({
   );
 
   return (
-    <section id={`#${id}`} className={sectionClassNames}>
+    <section id={id} className={sectionClassNames}>
       <div className={`container ${fullWidth && "max-w-full px-0"}`}>
         <div className="mb-8 lg:mb-16">
           <h1

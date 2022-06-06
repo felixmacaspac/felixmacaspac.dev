@@ -25,10 +25,6 @@ const navlinks = [
     name: "Projects",
     href: "#projects",
   },
-  {
-    name: "Certifications",
-    href: "#certifications",
-  },
 ];
 
 export default function NavBar() {

@@ -25,13 +25,12 @@ function App() {
       <SectionWrapper
         id="projects"
         textCenter={true}
-        heading="RECENT PROJECTS"
+        heading="PROJECTS"
         fullWidth={true}
       >
         <CardGrid />
       </SectionWrapper>
-      {/* 
-      <Footer/> */}
+      <Footer />
     </>
   );
 }
