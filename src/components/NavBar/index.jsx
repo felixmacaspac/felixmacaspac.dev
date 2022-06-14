@@ -52,7 +52,7 @@ export default function NavBar() {
     <Popover
       className={` ${
         addBlur && "drop-shadow-lg"
-      } fixed top-0 w-full z-50 bg-white transition-all dark:bg-primary`}
+      } fixed top-0 w-full z-50 bg-white transition-all duration-300 dark:bg-primary`}
     >
       <div className="container">
         <div className="flex justify-end items-center px-4 py-6 gap-4 sm:px-6 md:justify-start lg::gap-12">
