@@ -5,6 +5,8 @@ import { Fragment } from "react";
 import { Popover, Transition, Dialog } from "@headlessui/react";
 import { XIcon, MenuAlt1Icon } from "@heroicons/react/outline";
 import { MoonIcon, SunIcon } from "@heroicons/react/solid";
+import ContactModal from "../ContactModal";
+import { Form } from "../ContactModal/Form";
 
 import useDarkMode from "../../hooks/useDarkMode";
 
@@ -55,7 +57,7 @@ export default function NavBar() {
       } fixed top-0 w-full z-50 bg-white transition-all duration-300 dark:bg-primary`}
     >
       <div className="container">
-        <div className="flex justify-end items-center px-4 py-6 gap-4 sm:px-6 md:justify-start lg::gap-12">
+        <div className="flex justify-end items-center px-0 py-6 gap-4 sm:px-6 md:justify-start lg:gap-12">
           <div className="-mr-2 -my-2 md:hidden">
             <Popover.Button className="rounded-md p-2 inline-flex items-center justify-center text-primary focus:outline-none focus:ring-2 focus:ring-inset focus:ring-secondary dark:text-white">
               <span className="sr-only">Open menu</span>
@@ -90,12 +92,12 @@ export default function NavBar() {
               <MoonIcon className="h-6 w-6 cursor-pointer opacity-100" />
             )}
           </div>
-          <a
-            className="bg-secondary-400 justify-center font-semibold text-center px-4 py-3 rounded-xl text-white dark:bg-secondary dark:hover:bg-secondary-400 dark:active:scale-105 transition-all duration-300 hidden md:flex lg:w-[150px]"
-            href="#"
+          <ContactModal
+            className="hidden md:flex"
+            closeButton={<XIcon className="w-10 h-10" />}
           >
-            Say Hi! 👋
-          </a>
+            <Form />
+          </ContactModal>
         </div>
 
         <Transition
@@ -144,12 +146,12 @@ export default function NavBar() {
                     ))}
                   </nav>
                   <div className="mt-10">
-                    <a
-                      className="bg-secondary-400 text-center font-semibold px-4 py-3 rounded-xl text-white dark:bg-secondary dark:hover:bg-secondary-400 dark:active:scale-105 transition-all duration-300 flex justify-center items-center w-full"
-                      href="#"
+                    <ContactModal
+                      className="flex w-full md:hidden"
+                      closeButton={<XIcon className="w-10 h-10" />}
                     >
-                      Say Hi! 👋
-                    </a>
+                      <Form />
+                    </ContactModal>
                   </div>
                 </div>
               </div>
