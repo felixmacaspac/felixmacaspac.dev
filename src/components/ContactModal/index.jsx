@@ -17,20 +17,22 @@ const ContactModal = ({ closeButton, children, className }) => {
         Say Hi! 👋
       </button>
       <Modal
+        ariaHideApp={false}
         style={{
           overlay: {
             zIndex: 100,
           },
           content: {
             color: "white",
-            inset: "30% 0",
-            height: "500px",
+            inset: "15% 0",
+            height: "650px",
             background: "#1B2027",
             borderRadius: "1rem",
             border: "none",
             maxWidth: "600px",
             width: "100%",
             marginInline: "auto",
+            overflow: "hidden",
           },
         }}
         isOpen={isOpen}
@@ -38,13 +40,13 @@ const ContactModal = ({ closeButton, children, className }) => {
         contentLabel="My dialog"
       >
         <button
-          className="relative w-full flex justify-end"
+          className="absolute w-full flex justify-end right-4"
           onClick={toggleModal}
         >
           {" "}
           {closeButton}
         </button>
-        <div className="flex justify-center items-center dark:text-white">
+        <div className="flex justify-center h-full items-center dark:text-white">
           {children}
         </div>
       </Modal>
