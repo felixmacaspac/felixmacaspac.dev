@@ -33,10 +33,10 @@ export default function NavBar() {
   const [darkTheme, setDarkTheme] = useDarkMode();
   const handleMode = () => setDarkTheme(!darkTheme);
 
-  const [addBlur, setAddBlur] = useState(true);
+  const [addBlur, setAddBlur] = useState(false);
 
   const addBlurScroll = () => {
-    if (window.scrollY > 100) {
+    if (window.scrollY >= 100) {
       setAddBlur(true);
     } else {
       setAddBlur(false);
