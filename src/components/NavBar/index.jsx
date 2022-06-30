@@ -50,6 +50,11 @@ export default function NavBar() {
     };
   }, []);
 
+  const [modalIsOpen, modalSetItOpen] = useState(false);
+  const toggleModal = () => {
+    modalSetItOpen(!modalIsOpen);
+  };
+
   return (
     <Popover
       className={` ${
@@ -92,12 +97,11 @@ export default function NavBar() {
               <MoonIcon className="h-6 w-6 cursor-pointer opacity-100" />
             )}
           </div>
-          <ContactModal
-            className="hidden md:flex"
-            closeButton={<XIcon className="w-10 h-10" />}
-          >
-            <Form />
-          </ContactModal>
+          <div className="hidden md:flex">
+            <ContactModal toggleOpen={modalIsOpen} toggleClose={toggleModal}>
+              <Form />
+            </ContactModal>
+          </div>
         </div>
 
         <Transition
@@ -145,10 +149,10 @@ export default function NavBar() {
                       </a>
                     ))}
                   </nav>
-                  <div className="mt-10">
+                  <div className="mt-10 flex md:hidden">
                     <ContactModal
-                      className="flex w-full md:hidden"
-                      closeButton={<XIcon className="w-10 h-10" />}
+                      toggleOpen={modalIsOpen}
+                      toggleClose={toggleModal}
                     >
                       <Form />
                     </ContactModal>

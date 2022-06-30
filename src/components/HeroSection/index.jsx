@@ -12,11 +12,6 @@ const socials = [
     alt: "Github Icon",
     link: "https://github.com/felixmacaspac",
   },
-  {
-    logo: images.upworkIcon,
-    alt: "Upwork Icon",
-    link: "https://www.upwork.com/freelancers/~013e0372898b53a69e",
-  },
 ];
 
 const HeroSection = () => {
@@ -28,7 +23,7 @@ const HeroSection = () => {
             <h1 className="hero__heading">Felix M.</h1>
           </div>
         </div>
-        <div className="w-full relative bottom-20 md:w-auto md:absolute md:top-2/3">
+        <div className="w-full relative bottom-20 md:w-auto md:absolute md:top-[70%]">
           <ul className="flex flex-row justify-center items-center w-full gap-6 md:flex-col">
             {socials.map((social, index) => (
               <li

@@ -11,13 +11,13 @@ import gitLogo from "../assets/logo/git-logo.svg";
 import githubLogo from "../assets/logo/github-logo.svg";
 import nextLogo from "../assets/logo/next-logo.svg";
 import hubspotLogo from "../assets/logo/hubspot-logo.svg";
-
 import felixImage from "../assets/whacky-felix.png";
-
 import bluecheckImage from "../assets/projects/bluecheck-visible.png";
 import catifyImage from "../assets/projects/catify-visible.png";
 import shortlyImage from "../assets/projects/shortly-visible.png";
 import sunnysideImage from "../assets/projects/sunnyside-visible.png";
+import errorIllustration from "../assets/illustrations/404-vector.svg";
+import successIllustration from "../assets/illustrations/success-vector.svg";
 
 export default {
   emailIcon,
@@ -38,4 +38,6 @@ export default {
   catifyImage,
   shortlyImage,
   sunnysideImage,
+  errorIllustration,
+  successIllustration,
 };

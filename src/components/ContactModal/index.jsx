@@ -1,52 +1,39 @@
-import React, { useState } from "react";
+import React from "react";
+import { XIcon } from "@heroicons/react/outline";
 import Modal from "react-modal";
+import classnames from "classnames";
 
-const ContactModal = ({ closeButton, children, className }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleModal = () => {
-    setIsOpen(!isOpen);
-  };
+const ContactModal = ({ toggleOpen, toggleClose, children, className }) => {
+  const modalClassNames = classnames(
+    className,
+    "modal",
+    // eslint-disable-next-line comma-dangle
+    "absolute my-auto mx-6 inset-0 bg-white rounded-lg max-w-[565px] h-max bg-primary-500 sm:mx-auto dark:bg-white"
+  );
 
   return (
-    <div className="App">
+    <div className="w-full">
       <button
-        onClick={toggleModal}
-        className={`bg-secondary-400 justify-center font-semibold text-center px-4 py-3 rounded-xl text-white dark:bg-secondary dark:hover:bg-secondary-400 dark:active:scale-105 transition-all duration-300 lg:w-[150px] ${className}`}
+        onClick={toggleClose}
+        className="bg-secondary-400 w-full justify-center font-semibold text-center px-4 py-3 rounded-xl text-white dark:bg-secondary dark:hover:bg-secondary-400 dark:active:scale-105 transition-all duration-300 lg:w-[150px]"
       >
         Say Hi! 👋
       </button>
       <Modal
         ariaHideApp={false}
-        style={{
-          overlay: {
-            zIndex: 100,
-          },
-          content: {
-            color: "white",
-            inset: "15% 0",
-            height: "650px",
-            background: "#1B2027",
-            borderRadius: "1rem",
-            border: "none",
-            maxWidth: "600px",
-            width: "100%",
-            marginInline: "auto",
-            overflow: "hidden",
-          },
-        }}
-        isOpen={isOpen}
-        onRequestClose={toggleModal}
-        contentLabel="My dialog"
+        className={modalClassNames}
+        overlayClassName={"modal-overlay"}
+        isOpen={toggleOpen}
+        onRequestClose={toggleClose}
       >
         <button
-          className="absolute w-full flex justify-end right-4"
-          onClick={toggleModal}
+          className="absolute flex justify-end right-4 top-4 z-[150] text-white dark:text-primary-500"
+          onClick={toggleClose}
         >
           {" "}
-          {closeButton}
+          <XIcon className="w-10 h-10" />
         </button>
-        <div className="flex justify-center h-full items-center dark:text-white">
+        <div className="w-full flex justify-center h-full items-center dark:text-white">
           {children}
         </div>
       </Modal>
