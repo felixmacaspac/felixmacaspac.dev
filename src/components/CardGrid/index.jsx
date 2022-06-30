@@ -32,7 +32,7 @@ const CardGrid = () => {
         <a href={proj.link} key={index} className="flex" target="_blank">
           <div className="relative">
             <img
-              className="h-full cursor-pointer ease-in transition-all hover:filter hover:shadow-xl dark:opacity-20 dark:hover:opacity-100"
+              className="w-full object-contain h-full cursor-pointer ease-in transition-all hover:filter hover:shadow-xl dark:opacity-20 dark:hover:opacity-100"
               src={proj.image}
               alt={proj.heading}
             />
