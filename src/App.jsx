@@ -2,7 +2,7 @@ import NavBar from "./components/NavBar";
 import HeroSection from "./components/HeroSection";
 import TabSection from "./components/TabSection";
 import TwoColumnCard from "./components/TwoColumnCard";
-import CardGrid from "./components/CardGrid";
+import FeaturedAlternate from "./components/FeaturedAlternate";
 import Footer from "./components/Footer";
 
 import "./index.css";
@@ -22,13 +22,8 @@ function App() {
         <TwoColumnCard />
       </SectionWrapper>
 
-      <SectionWrapper
-        id="projects"
-        textCenter={true}
-        heading="PROJECTS"
-        fullWidth={true}
-      >
-        <CardGrid />
+      <SectionWrapper id="projects" heading="PROJECTS">
+        <FeaturedAlternate />
       </SectionWrapper>
       <Footer />
     </>
