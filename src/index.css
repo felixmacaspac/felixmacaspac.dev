@@ -49,3 +49,14 @@
     background-color: rgba(0, 0, 0, 0.61);
   }
 }
+
+@layer components {
+  .featured-alt:nth-child(odd) .featured-no {
+    @apply -left-20;
+  }
+
+  .featured-alt:nth-child(even) .featured-no {
+    @apply -right-20;
+    z-index: 1;
+  }
+}

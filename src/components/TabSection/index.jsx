@@ -37,6 +37,10 @@ const logos = [
     image: images.hubspotLogo,
     title: "HubSpot",
   },
+  {
+    image: images.tailwindLogo,
+    title: "Tailwind",
+  },
 ];
 
 const TabSection = () => {
