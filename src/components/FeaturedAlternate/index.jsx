@@ -1,6 +1,7 @@
 import React from "react";
 import images from "../../constants/image";
 import { GlobeAltIcon } from "@heroicons/react/outline";
+import RichText from "../RichText";
 
 const projects = [
   {
@@ -8,7 +9,7 @@ const projects = [
     image: images.bluecheckImage,
     heading: "Bluecheck",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil sed tempora veniam quae rerum, repellat voluptas officiis quo libero similique!",
+      "<Also>One of my first freelance project.<p/> <br/> <p>I had some fun working with this project <i>independently.</i> Also improved a lot with the HubSpot CMS and tailwind CSS</p>",
     websiteLink: "https://www.bluecheck.me/",
     html: true,
     css: true,
@@ -16,26 +17,12 @@ const projects = [
     hubspot: true,
     tailwind: true,
   },
-
   {
     id: 2,
-    image: images.catifyImage,
-    heading: "Catify",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil sed tempora veniam quae rerum, repellat voluptas officiis quo libero similique!",
-    websiteLink: "https://catify-app.netlify.app/",
-    githubLink: "https://github.com/felixmacaspac/catify-landing-page",
-    // techno
-    html: true,
-    css: true,
-    javascript: true,
-  },
-  {
-    id: 3,
     image: images.shortlyImage,
     heading: "Shortly",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil sed tempora veniam quae rerum, repellat voluptas officiis quo libero similique!",
+      "One of my frontendmentor.io challenge projects! Had a good one working with this one and enhance my JavaScript and CSS skills.",
     websiteLink: "https://shorten-app.netlify.app/",
     githubLink: "https://github.com/felixmacaspac/fem-url-shortener-website",
     // techno
@@ -44,13 +31,26 @@ const projects = [
     javascript: true,
   },
   {
-    id: 4,
+    id: 3,
     image: images.sunnysideImage,
     heading: "Sunnyside",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil sed tempora veniam quae rerum, repellat voluptas officiis quo libero similique!",
+      "<p>Simple frontendmentor.io challenge project! Also had a lot of fun working with the UI of this project.</p>",
     websiteLink: "https://sunny-page.netlify.app/",
     githubLink: "https://github.com/felixmacaspac/fem-sunnyside-landing-page",
+    // techno
+    html: true,
+    css: true,
+    javascript: true,
+  },
+  {
+    id: 4,
+    image: images.catifyImage,
+    heading: "Catify",
+    description:
+      "<p>Started this project way back 2020. One of my first project when I was self-studying front-end development.</p> <br/> <p>Fun fact: I had this project idea because of tinder lol! instead of <i>people</i> this website is for cats! </p>",
+    websiteLink: "https://catify-app.netlify.app/",
+    githubLink: "https://github.com/felixmacaspac/catify-landing-page",
     // techno
     html: true,
     css: true,
@@ -67,23 +67,24 @@ const CardGrid = () => {
             key={proj.id}
             className="featured-alt flex even:flex-col-reverse odd:flex-col-reverse gap-10 items-center relative md:gap-20 md:even:flex-row md:odd:flex-row-reverse"
           >
-            <span className="featured-no absolute text-[10rem] dark:text-primary-300 -top-32 opacity-20 hidden xl:block">
+            <span className="featured-no absolute text-[10rem] text-primary-300 -top-32 opacity-20 hidden xl:block">
               0{proj.id}
             </span>
             <div className="w-full z-10 md:w-1/2">
-              <h3 className="text-4xl font-semibold mb-4 dark:text-white">
+              <h3 className="text-primary text-4xl font-semibold mb-4 dark:text-white">
                 {proj.heading}
               </h3>
-              <p className="text-base dark:text-neutral-300">
-                {proj.description}
-              </p>
+              <RichText
+                className="text-primary-400 text-base dark:text-neutral-300"
+                content={proj.description}
+              />
               <div className="flex flex-row relative">
                 <div className="flex flex-row justify-center gap-4 py-10">
                   {proj.websiteLink && (
                     <a
                       href={proj.websiteLink}
                       target="_blank"
-                      className="flex gap-3 items-center w-fit bg-secondary py-2 px-4 rounded-lg dark:text-white dark:hover:bg-secondary-400 dark:active:scale-105 transition-all duration-300"
+                      className="flex gap-3 items-center w-fit bg-secondary py-2 px-4 rounded-lg text-white dark:hover:bg-secondary-400 dark:active:scale-105 transition-all duration-300"
                     >
                       <GlobeAltIcon className="w-6 h-6" />
                       Website
@@ -93,7 +94,7 @@ const CardGrid = () => {
                     <a
                       href={proj.githubLink}
                       target="_blank"
-                      className="flex gap-3 items-center w-auto bg-secondary py-2 px-4 rounded-lg dark:text-white dark:hover:bg-secondary-400 dark:active:scale-105 transition-all duration-300"
+                      className="flex gap-3 items-center w-auto bg-secondary py-2 px-4 rounded-lg text-white dark:hover:bg-secondary-400 dark:active:scale-105 transition-all duration-300"
                     >
                       <svg
                         viewBox="0 0 20 20"
@@ -118,7 +119,7 @@ const CardGrid = () => {
                   <div className="w-full border-t border-gray-300" />
                 </div>
                 <div className="relative flex justify-center">
-                  <span className="uppercase px-2 bg-gray-50 text-sm text-gray-500 dark:bg-primary">
+                  <span className="uppercase px-2 bg-white text-sm text-gray-500 dark:bg-primary">
                     TECHNOLOGIES USED
                   </span>
                 </div>
