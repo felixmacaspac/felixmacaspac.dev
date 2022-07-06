@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import images from "../../constants/image";
 import { GlobeAltIcon } from "@heroicons/react/outline";
 import RichText from "../RichText";
@@ -59,6 +59,8 @@ const projects = [
 ];
 
 const CardGrid = () => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
   return (
     <>
       <div className="flex flex-col gap-20 mt-32 md:gap-40 lg:gap-60">
@@ -190,7 +192,10 @@ const CardGrid = () => {
                 )}
               </div>
             </div>
-            <div className="w-full z-10 md:w-1/2">
+            <div className="w-full z-10 relative md:w-1/2">
+              {!isLoaded && (
+                <div className="absolute bg-primary-400 animate-pulse w-full rounded-lg filter shadow-lg object-cover h-[340px]" />
+              )}
               <img
                 className="w-full rounded-lg filter shadow-lg object-cover h-[340px]"
                 loading="lazy"
@@ -198,6 +203,7 @@ const CardGrid = () => {
                 height={355}
                 src={proj.image}
                 alt={proj.heading}
+                onLoad={() => setIsLoaded(true)}
               />
             </div>
           </div>

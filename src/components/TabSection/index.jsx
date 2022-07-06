@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import images from "../../constants/image";
@@ -44,6 +44,8 @@ const logos = [
 ];
 
 const TabSection = () => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
   return (
     <>
       <Tabs defaultIndex={0}>
@@ -126,13 +128,18 @@ const TabSection = () => {
               </li>
             </ul>
           </div>
-          <div className="w-full md:w-1/2 md:h-[450px]">
+
+          <div className="w-full relative md:w-1/2 md:h-[450px]">
+            {!isLoaded && (
+              <div className="absolute top-0 rounded-lg left-0 z-50 bg-primary-400 animate-pulse w-full md:h-[450px]" />
+            )}
             <img
-              src={images.felixImage}
-              className="h-full w-full object-cover object-top rounded-lg filter shadow-lg"
-              alt="Image Felix"
-              loading="lazy"
-            />
+                src={images.felixImage}
+                className="h-full w-full z-10 object-cover object-top rounded-lg filter shadow-lg"
+                alt="Image Felix"
+                loading="lazy"
+                onLoad={() => setIsLoaded(true)}
+              />
           </div>
         </TabPanel>
         <TabPanel className="flex gap-20 items-center flex-col md:flex-row-reverse transition-all">
