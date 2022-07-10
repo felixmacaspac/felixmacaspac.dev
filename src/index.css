@@ -60,3 +60,13 @@
     z-index: 1;
   }
 }
+
+@layer components {
+  .loading-wrapper {
+    @apply w-full h-full fixed top-0 left-0 bg-primary grid items-center transition-all delay-300;
+  }
+
+  .loading {
+    @apply animate-spin border-8 rounded-full border-solid border-neutral w-[140px] h-[140px] transition-all delay-300;
+  }
+}
