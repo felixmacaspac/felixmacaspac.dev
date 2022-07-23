@@ -62,7 +62,22 @@ export default function NavBar() {
       } fixed top-0 w-full z-50 bg-white transition-all duration-300 dark:bg-primary`}
     >
       <div className="container">
-        <div className="flex justify-end items-center px-0 py-6 gap-4 sm:px-6 md:justify-start lg:gap-12">
+        <div className="flex justify-end items-center px-0 py-6 gap-4 sm:px-6 lg:gap-10">
+          <div className="h-full w-full">
+            {darkTheme ? (
+              <img
+                class="h-12 w-auto"
+                src="/src/assets/icons/logo-dark.png"
+                alt=""
+              />
+            ) : (
+              <img
+                class="h-12 w-auto"
+                src="/src/assets/icons/logo-light.png"
+                alt=""
+              />
+            )}
+          </div>
           <div className="-mr-2 -my-2 md:hidden">
             <Popover.Button className="rounded-md p-2 inline-flex items-center justify-center text-primary focus:outline-none focus:ring-2 focus:ring-inset focus:ring-secondary dark:text-white">
               <span className="sr-only">Open menu</span>
@@ -86,9 +101,13 @@ export default function NavBar() {
               </a>
             ))}
           </Popover.Group>
-
+          <div className="hidden md:flex">
+            <ContactModal toggleOpen={modalIsOpen} toggleClose={toggleModal}>
+              <Form />
+            </ContactModal>
+          </div>
           <div
-            className="ml-auto text-primary hidden transition-opacity md:mr-4 md:block dark:text-white"
+            className="text-primary hidden transition-opacity md:block dark:text-white"
             onClick={handleMode}
           >
             {darkTheme ? (
@@ -96,11 +115,6 @@ export default function NavBar() {
             ) : (
               <MoonIcon className="h-6 w-6 cursor-pointer opacity-100" />
             )}
-          </div>
-          <div className="hidden md:flex">
-            <ContactModal toggleOpen={modalIsOpen} toggleClose={toggleModal}>
-              <Form />
-            </ContactModal>
           </div>
         </div>
 
