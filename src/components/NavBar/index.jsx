@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-
-/* This example requires Tailwind CSS v2.0+ */
+import images from "../../constants/image";
 import { Fragment } from "react";
 import { Popover, Transition, Dialog } from "@headlessui/react";
 import { XIcon, MenuAlt1Icon } from "@heroicons/react/outline";
@@ -9,6 +8,7 @@ import ContactModal from "../ContactModal";
 import { Form } from "../ContactModal/Form";
 
 import useDarkMode from "../../hooks/useDarkMode";
+import image from "../../constants/image";
 
 const navlinks = [
   {
@@ -65,17 +65,9 @@ export default function NavBar() {
         <div className="flex justify-end items-center px-0 py-6 gap-4 sm:px-6 lg:gap-10">
           <div className="h-full w-full">
             {darkTheme ? (
-              <img
-                class="h-12 w-auto"
-                src="/src/assets/icons/logo-dark.png"
-                alt=""
-              />
+              <img class="h-12 w-auto" src={images.brandLogoDark} alt="" />
             ) : (
-              <img
-                class="h-12 w-auto"
-                src="/src/assets/icons/logo-light.png"
-                alt=""
-              />
+              <img class="h-12 w-auto" src={images.brandLogoLight} alt="" />
             )}
           </div>
           <div className="-mr-2 -my-2 md:hidden">
