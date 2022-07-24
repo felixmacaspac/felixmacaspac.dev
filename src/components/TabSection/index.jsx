@@ -60,33 +60,23 @@ const TabSection = () => {
         <TabPanel className="flex gap-20 items-center flex-col-reverse md:flex-row-reverse transition-all">
           <div className="w-full text-primary md:w-1/2 dark:text-white">
             <h2 className="text-2xl font-semibold mb-2">
-              React Developer | HubSpot CMS Developer
+              HubSpot CMS Developer | Frontend Developer
             </h2>
             <p className="text-base font-normal text-neutral-700 dark:text-neutral-300">
-              I've been into front-end development for almost ONE year & working
-              professionally for almost TEN months, still learning, and failing.
+              As a self-taught front-end engineer with nearly two years of
+              experience and an incoming freshman at the National University of
+              the Philippines pursuing a Bachelor of Science in Computer Science
+              with a specialization in machine learning (BSCS-ML), I am very
+              excited about new web development technologies.
             </p>
             <br />
-            <h3 className="font-semibold text-xl mb-2">
-              How can I help you 🔨 :
-            </h3>
-            <ul className="list-inside list-disc text-neutral-700 dark:text-neutral-300">
-              <li>
-                I'll help you convert your Figma/PSD/XD design into a perfect
-                pixel-responsive website or landing page. ✨
-              </li>
-              <li>
-                I'll help you fix bugs/issues that have something to do with
-                HTML, CSS & JS. 🐛
-              </li>
-              <li>
-                I'll help you implement new features on your current website. 👷{" "}
-              </li>
-              <li>
-                I'll help you create new modules/templates for your HubSpot CMS
-                Website 🎉
-              </li>
-            </ul>
+            <p className="text-base font-normal text-neutral-700 dark:text-neutral-300">
+              I'm also a Certified HubSpot CMS Developer who works on HubSpot
+              CMS-related projects with HubL, HTML, CSS, and JavaScript. I've
+              also had a lot of fun working on some fantastic projects that make
+              use of React, Nextjs, and Tailwind. In the future, I hope to learn
+              typescript.
+            </p>
             <br />
             <h3 className="font-semibold text-xl mb-2">Certifications 📝:</h3>
             <ul className="list-inside list-disc text-neutral-700 dark:text-neutral-300">
@@ -134,12 +124,12 @@ const TabSection = () => {
               <div className="absolute top-0 rounded-lg left-0 z-50 bg-primary-400 animate-pulse w-full md:h-[450px]" />
             )}
             <img
-                src={images.felixImage}
-                className="h-full w-full z-10 object-cover object-top rounded-lg filter shadow-lg"
-                alt="Image Felix"
-                loading="lazy"
-                onLoad={() => setIsLoaded(true)}
-              />
+              src={images.felixImage}
+              className="h-full w-full z-10 object-cover object-top rounded-lg filter shadow-lg"
+              alt="Image Felix"
+              loading="lazy"
+              onLoad={() => setIsLoaded(true)}
+            />
           </div>
         </TabPanel>
         <TabPanel className="flex gap-20 items-center flex-col md:flex-row-reverse transition-all">
