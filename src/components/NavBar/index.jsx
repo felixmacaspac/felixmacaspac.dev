@@ -8,7 +8,6 @@ import ContactModal from "../ContactModal";
 import { Form } from "../ContactModal/Form";
 
 import useDarkMode from "../../hooks/useDarkMode";
-import image from "../../constants/image";
 
 const navlinks = [
   {
@@ -59,7 +58,7 @@ export default function NavBar() {
     <Popover
       className={` ${
         addBlur && "drop-shadow-lg"
-      } fixed top-0 w-full z-50 bg-white transition-all duration-300 dark:bg-primary`}
+      } fixed top-0 w-full z-[100] bg-white transition-all duration-300 dark:bg-primary`}
     >
       <div className="container">
         <div className="flex justify-end items-center px-0 py-6 gap-4 sm:px-6 lg:gap-10">
