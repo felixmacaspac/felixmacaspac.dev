@@ -57,17 +57,17 @@ export default function NavBar() {
   return (
     <Popover
       className={` ${
-        addBlur && "drop-shadow-lg"
-      } fixed top-0 w-full z-[100] bg-white transition-all duration-300 dark:bg-primary`}
+        addBlur && "drop-shadow-lg backdrop-blur-md"
+      } fixed top-0 w-full z-[100] transition-all duration-300`}
     >
       <div className="container">
         <div className="flex justify-end items-center px-0 py-6 gap-4 sm:px-6 lg:gap-10">
           <div className="mr-auto">
             <a href="/">
               {darkTheme ? (
-                <img class="h-12 w-auto" src={images.brandLogoDark} alt="" />
+                <img className="h-12 w-auto" src={images.brandLogoDark} alt="" />
               ) : (
-                <img class="h-12 w-auto" src={images.brandLogoLight} alt="" />
+                <img className="h-12 w-auto" src={images.brandLogoLight} alt="" />
               )}
             </a>
           </div>
@@ -88,7 +88,7 @@ export default function NavBar() {
               <a
                 key={navlink.name}
                 href={navlink.href}
-                className="text-base font-medium text-primary dark:hover:text-neutral dark:text-white"
+                className="text-base font-medium text-primary relative before:absolute before:-bottom-1 before:h-0.5 before:w-full before:scale-x-0 before:transition before:bg-primary hover:before:scale-x-100 dark:hover:text-neutral dark:text-white dark:before:bg-secondary-400"
               >
                 {navlink.name}
               </a>
