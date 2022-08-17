@@ -43,7 +43,7 @@ export const Form = () => {
     <>
       {!successState && !errorState && (
         <form
-          className="z-50 flex flex-col gap-4 w-full overflow-hidden px-6 py-16 md:px-10 md:py-20"
+          className="z-50 flex flex-col gap-4 w-full overflow-hidden px-6 py-10 md:px-10"
           onSubmit={handleSubmit(sendEmail)}
         >
           <div className="pb-3 relative md:pb-6">
@@ -91,7 +91,7 @@ export const Form = () => {
           </div>
           {isSubmitting ? (
             <button
-              className="mt-6 flex items-center justify-center text-base font-semibold text-white bg-secondary px-10 py-3 rounded-md transition-colors hover:bg-neutral-90"
+              className="flex items-center justify-center text-base font-semibold text-white bg-secondary px-10 py-3 rounded-md transition-colors hover:bg-neutral-90"
               type="submit"
             >
               Sending
@@ -115,7 +115,7 @@ export const Form = () => {
             </button>
           ) : (
             <button
-              className="mt-6 text-base font-semibold text-white bg-secondary px-10 py-3 rounded-md transition-colors hover:bg-neutral-90"
+              className="text-base font-semibold text-white bg-secondary px-10 py-3 rounded-md transition-colors hover:bg-neutral-90"
               type="submit"
             >
               Send
@@ -124,13 +124,13 @@ export const Form = () => {
         </form>
       )}
       {successState && (
-        <div className="px-10 py-20">
+        <div className="px-10 py-10">
           <h3 className="text-3xl font-semibold text-center text-white dark:text-primary">
             Email sent!
           </h3>
           <div className="mb-4">
             <img
-              className="w-full h-[250px] md:h-[400px]"
+              className="w-full h-[200px] md:h-[270px]"
               src={images.successIllustration}
               alt="error image"
             />
@@ -147,13 +147,13 @@ export const Form = () => {
         </div>
       )}
       {errorState && (
-        <div className="px-10 py-20">
+        <div className="px-10 py-10">
           <h3 className="text-3xl font-semibold text-center text-white dark:text-primary">
             Oops, Something went wrong!
           </h3>
           <div className="mb-4">
             <img
-              className="w-full h-[250px] md:h-[400px]"
+              className="w-full h-[200px] md:h-[270px]"
               src={images.errorIllustration}
               alt="error image"
             />

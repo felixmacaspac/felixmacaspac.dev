@@ -8,7 +8,7 @@ const ContactModal = ({ toggleOpen, toggleClose, children, className }) => {
     className,
     "modal",
     // eslint-disable-next-line comma-dangle
-    "absolute my-auto mx-6 top-0 bottom-0 right-0 left-0 bg-white rounded-lg max-w-[565px] h-[600px] bg-primary-500 sm:mx-auto dark:bg-white"
+    "absolute my-auto mx-6 top-0 bottom-0 right-0 left-0 bg-white rounded-lg max-w-[565px] h-[435px] bg-primary-500 pt-10 sm:mx-auto md:h-[500px] dark:bg-white"
   );
 
   return (
@@ -33,7 +33,7 @@ const ContactModal = ({ toggleOpen, toggleClose, children, className }) => {
           {" "}
           <XIcon className="w-10 h-10" />
         </button>
-        <div className="w-full flex justify-center h-full items-center dark:text-white">
+        <div className="w-full  dark:text-white">
           {children}
         </div>
       </Modal>
