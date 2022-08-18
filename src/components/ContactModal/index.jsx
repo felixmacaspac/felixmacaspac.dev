@@ -15,9 +15,14 @@ const ContactModal = ({ toggleOpen, toggleClose, children, className }) => {
     <div className="w-full">
       <button
         onClick={toggleClose}
-        className="bg-secondary-400 w-full justify-center font-semibold text-center px-4 py-3 rounded-xl text-white dark:bg-secondary dark:hover:bg-secondary-400 dark:active:scale-105 transition-all duration-300 lg:w-[150px]"
-      >
-        Say Hi! 👋
+        className="relative inline-flex items-center py-3 overflow-hidden text-white font-semibold bg-secondary px-12 rounded-md group active:bg-secondary-500 focus:outline-none focus:ring" href="/download">
+        <span class="absolute right-0 md:transition-transform md:translate-x-full md:group-hover:-translate-x-10 hidden md:block">
+        👋
+        </span>
+
+        <span class="text-sm font-medium transition-all group-hover:mr-4">
+          Say hi!
+        </span>
       </button>
       <Modal
         ariaHideApp={false}
