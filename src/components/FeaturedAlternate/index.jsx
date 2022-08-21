@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import images from "../../constants/image";
 import { GlobeAltIcon } from "@heroicons/react/outline";
 import RichText from "../RichText";
@@ -83,24 +83,26 @@ const CardGrid = () => {
               <div className="flex flex-row relative">
                 <div className="flex flex-row justify-center gap-4 py-10">
                   {proj.websiteLink && (
-                    <a 
-                      className="relative inline-block text-sm font-medium text-white group focus:outline-none focus:ring" 
+                    <a
+                      className="relative inline-block text-sm font-medium text-white group focus:outline-none focus:ring"
                       href={proj.websiteLink}
-                      target="_blank">
-                      <span class="absolute inset-0 border border-secondary group-active:border-secondary"></span>
-                      <span class="flex items-center gap-3 px-4 py-3 transition-transform bg-secondary border border-secondary active:border-secondary active:bg-secondary group-hover:-translate-x-1 group-hover:-translate-y-1">
-                      <GlobeAltIcon className="w-6 h-6" />
-                      Website
+                      target="_blank"
+                    >
+                      <span className="absolute inset-0 border border-secondary group-active:border-secondary"></span>
+                      <span className="flex items-center gap-3 px-4 py-3 transition-transform bg-secondary border border-secondary active:border-secondary active:bg-secondary group-hover:-translate-x-1 group-hover:-translate-y-1">
+                        <GlobeAltIcon className="w-6 h-6" />
+                        Website
                       </span>
                     </a>
                   )}
                   {proj.githubLink && (
-                    <a 
-                    className="relative inline-block text-sm font-medium text-secondary dark:text-secondary-50 active:text-secondary group focus:outline-none focus:ring"
-                    href={proj.githubLink}
-                    target="_blank">
-                      <span class="absolute inset-0 border border-current"></span>
-                      <span class="flex flex-row gap-3 items-center px-4 py-3 transition-transform bg-transparent border border-current group-hover:-translate-x-1 group-hover:-translate-y-1">
+                    <a
+                      className="relative inline-block text-sm font-medium text-secondary dark:text-secondary-50 active:text-secondary group focus:outline-none focus:ring"
+                      href={proj.githubLink}
+                      target="_blank"
+                    >
+                      <span className="absolute inset-0 border border-current"></span>
+                      <span className="flex flex-row gap-3 items-center px-4 py-3 transition-transform bg-transparent border border-current group-hover:-translate-x-1 group-hover:-translate-y-1">
                         <svg
                           viewBox="0 0 20 20"
                           xmlns="http://www.w3.org/2000/svg"
