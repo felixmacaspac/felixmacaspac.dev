@@ -72,7 +72,7 @@ const CardGrid = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ type: "linear", duration: 0.5 }}
             key={proj.id}
-            className="featured-alt flex even:flex-col-reverse odd:flex-col-reverse gap-10 items-center relative md:gap-20 md:even:flex-row md:odd:flex-row-reverse"
+            className="featured-alt flex even:flex-col-reverse odd:flex-col-reverse gap-10 items-start relative md:gap-20 md:even:flex-row md:odd:flex-row-reverse"
           >
             <span className="featured-no absolute text-[10rem] text-primary-300 -top-32 opacity-20 hidden xl:block">
               0{proj.id}
@@ -208,7 +208,7 @@ const CardGrid = () => {
                 <div className="absolute bg-primary-400 animate-pulse w-full rounded-lg filter shadow-lg object-cover h-[340px]" />
               )}
               <img
-                className="w-full rounded-lg filter shadow-lg object-cover h-[340px]"
+                className="w-full rounded-lg filter shadow-lg object-contain h-auto"
                 loading="lazy"
                 width={684}
                 height={355}
