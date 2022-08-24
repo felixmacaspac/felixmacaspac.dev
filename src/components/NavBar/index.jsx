@@ -6,7 +6,7 @@ import { XIcon, MenuAlt1Icon } from "@heroicons/react/outline";
 import { MoonIcon, SunIcon } from "@heroicons/react/solid";
 import ContactModal from "../ContactModal";
 import { Form } from "../ContactModal/Form";
-
+import { motion } from "framer-motion";
 import useDarkMode from "../../hooks/useDarkMode";
 
 const navlinks = [
@@ -60,14 +60,28 @@ export default function NavBar() {
         addBlur && "drop-shadow-lg backdrop-blur-md"
       } fixed top-0 w-full z-[100] transition-all duration-300`}
     >
-      <div className="container">
+      <motion.div
+        viewport={{ once: true }}
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ type: "linear", duration: 0.5 }}
+        className="container"
+      >
         <div className="flex justify-end items-center px-0 py-6 gap-4 sm:px-6 lg:gap-10">
           <div className="mr-auto">
             <a href="/">
               {darkTheme ? (
-                <img className="h-12 w-auto" src={images.brandLogoDark} alt="" />
+                <img
+                  className="h-12 w-auto"
+                  src={images.brandLogoDark}
+                  alt=""
+                />
               ) : (
-                <img className="h-12 w-auto" src={images.brandLogoLight} alt="" />
+                <img
+                  className="h-12 w-auto"
+                  src={images.brandLogoLight}
+                  alt=""
+                />
               )}
             </a>
           </div>
@@ -99,7 +113,22 @@ export default function NavBar() {
               <Form />
             </ContactModal>
           </div>
-          <div
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+              default: {
+                duration: 0.3,
+                ease: [0, 0.71, 0.2, 1.01],
+              },
+              scale: {
+                type: "spring",
+                damping: 5,
+                stiffness: 100,
+                restDelta: 0.001,
+              },
+            }}
+            whileTap={{ y: -5 }}
             className="text-primary hidden transition-opacity md:block dark:text-white"
             onClick={handleMode}
           >
@@ -108,7 +137,7 @@ export default function NavBar() {
             ) : (
               <MoonIcon className="h-6 w-6 cursor-pointer opacity-100" />
             )}
-          </div>
+          </motion.div>
         </div>
 
         <Transition
@@ -127,7 +156,22 @@ export default function NavBar() {
             <div className="rounded-lg shadow-lg filter drop-shadow-lg bg-primary-700">
               <div className="pt-5 pb-6 px-5">
                 <div className="flex items-center justify-between">
-                  <div
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{
+                      default: {
+                        duration: 0.3,
+                        ease: [0, 0.71, 0.2, 1.01],
+                      },
+                      scale: {
+                        type: "spring",
+                        damping: 5,
+                        stiffness: 100,
+                        restDelta: 0.001,
+                      },
+                    }}
+                    whileTap={{ y: -5 }}
                     className="text-primary transition-opacity block dark:text-white"
                     onClick={handleMode}
                   >
@@ -136,7 +180,7 @@ export default function NavBar() {
                     ) : (
                       <MoonIcon className="h-6 w-6 cursor-pointer opacity-100 text-white" />
                     )}
-                  </div>
+                  </motion.div>
                   <div className="-mr-2">
                     <Popover.Button className="rounded-md p-2 inline-flex items-center justify-center text-white hover:bg-primary-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-secondary">
                       <span className="sr-only">Close menu</span>
@@ -169,7 +213,7 @@ export default function NavBar() {
             </div>
           </Popover.Panel>
         </Transition>
-      </div>
+      </motion.div>
     </Popover>
   );
 }

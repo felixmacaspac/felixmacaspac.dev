@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import images from "../../constants/image";
 import { GlobeAltIcon } from "@heroicons/react/outline";
 import RichText from "../RichText";
+import { motion } from "framer-motion";
 
 const projects = [
   {
@@ -65,7 +66,11 @@ const CardGrid = () => {
     <>
       <div className="flex flex-col gap-20 mt-32 md:gap-40 lg:gap-60">
         {projects.map((proj) => (
-          <div
+          <motion.div
+            viewport={{ once: true }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ type: "linear", duration: 0.5 }}
             key={proj.id}
             className="featured-alt flex even:flex-col-reverse odd:flex-col-reverse gap-10 items-center relative md:gap-20 md:even:flex-row md:odd:flex-row-reverse"
           >
@@ -212,7 +217,7 @@ const CardGrid = () => {
                 onLoad={() => setIsLoaded(true)}
               />
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </>

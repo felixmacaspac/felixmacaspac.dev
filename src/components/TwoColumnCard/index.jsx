@@ -1,10 +1,32 @@
 import React from "react";
 import { BriefcaseIcon, CalendarIcon } from "@heroicons/react/solid";
+import { motion } from "framer-motion";
 
 const TwoColumnCard = () => {
   return (
-    <div className="grid grid-cols-1 gap-10 items-center md:grid-cols-2">
-      <div className="bg-gray-50 px-6 py-16 rounded-3xl h-full filter shadow-md relative md:px-10 dark:bg-primary-500">
+    <motion.div
+      initial="offscreen"
+      whileInView="onscreen"
+      viewport={{ once: true }}
+      className="grid grid-cols-1 gap-10 items-center md:grid-cols-2"
+    >
+      <motion.div
+        variants={{
+          offscreen: {
+            y: 150,
+          },
+          onscreen: {
+            y: 0,
+            transition: {
+              type: "spring",
+              bounce: 0.4,
+              duration: 1,
+            },
+          },
+        }}
+        whileHover={{ scale: 1.02 }}
+        className="cursor-pointer bg-gray-50 px-6 py-16 rounded-3xl h-full filter shadow-md relative md:px-10 dark:bg-primary-500"
+      >
         <h6 className="text-2xl font-bold text-primary mb-4 dark:text-white">
           <a
             href="https://www.hububble.co/"
@@ -47,8 +69,25 @@ const TwoColumnCard = () => {
             Responsible on maintaining and fixing bugs on current websites
           </li>
         </ul>
-      </div>
-      <div className="bg-gray-50 px-6 py-16 rounded-3xl h-full relative filter shadow-md md:px-10 dark:bg-primary-500">
+      </motion.div>
+      <motion.div
+        variants={{
+          offscreen: {
+            y: 300,
+          },
+          onscreen: {
+            y: 0,
+            // rotate: -10,
+            transition: {
+              type: "spring",
+              bounce: 0.4,
+              duration: 1.5,
+            },
+          },
+        }}
+        whileHover={{ scale: 1.02 }}
+        className="bg-gray-50 px-6 py-16 rounded-3xl h-full relative filter shadow-md md:px-10 dark:bg-primary-500"
+      >
         <h6 className="text-2xl font-bold text-primary mb-4 dark:text-white">
           <a
             href="https://www.upwork.com/freelancers/~013e0372898b53a69e"
@@ -87,8 +126,8 @@ const TwoColumnCard = () => {
             months!
           </li>
         </ul>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 
