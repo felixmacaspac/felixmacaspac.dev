@@ -139,7 +139,7 @@ const CardGrid = () => {
               </div>
               <div className="flex flex-wrap items-center gap-4 py-6">
                 {proj.html && (
-                  <div className="flex flex-col justify-center items-center gap-4 py-4 px-4 bg-gray-50 rounded-full filter shadow-md dark:bg-primary-400 dark:hover:bg-primary-300">
+                  <div className="flex flex-col justify-center items-center gap-4 py-4 px-4 bg-gray-50 rounded-full filter shadow-md cursor-pointer hover:bg-neutral-300 dark:bg-primary-400 dark:hover:bg-primary-300">
                     <img
                       className="h-8 object-contain dark:filter dark:invert"
                       src={images.htmlLogo}
@@ -148,7 +148,7 @@ const CardGrid = () => {
                   </div>
                 )}
                 {proj.css && (
-                  <div className="flex flex-col justify-center items-center gap-4 py-4 px-4 bg-gray-50 rounded-full filter shadow-md dark:bg-primary-400 dark:hover:bg-primary-300">
+                  <div className="flex flex-col justify-center items-center gap-4 py-4 px-4 bg-gray-50 rounded-full filter shadow-md cursor-pointer hover:bg-neutral-300 dark:bg-primary-400 dark:hover:bg-primary-300">
                     <img
                       className="h-8 object-contain dark:filter dark:invert"
                       src={images.cssLogo}
@@ -157,7 +157,7 @@ const CardGrid = () => {
                   </div>
                 )}
                 {proj.javascript && (
-                  <div className="flex flex-col justify-center items-center gap-4 py-4 px-4 bg-gray-50 rounded-full filter shadow-md dark:bg-primary-400 dark:hover:bg-primary-300">
+                  <div className="flex flex-col justify-center items-center gap-4 py-4 px-4 bg-gray-50 rounded-full filter shadow-md cursor-pointer hover:bg-neutral-300 dark:bg-primary-400 dark:hover:bg-primary-300">
                     <img
                       className="h-8 object-contain dark:filter dark:invert"
                       src={images.javascriptLogo}
@@ -166,7 +166,7 @@ const CardGrid = () => {
                   </div>
                 )}
                 {proj.react && (
-                  <div className="flex flex-col justify-center items-center gap-4 py-4 px-4 bg-gray-50 rounded-full filter shadow-md dark:bg-primary-400 dark:hover:bg-primary-300">
+                  <div className="flex flex-col justify-center items-center gap-4 py-4 px-4 bg-gray-50 rounded-full filter shadow-md cursor-pointer hover:bg-neutral-300 dark:bg-primary-400 dark:hover:bg-primary-300">
                     <img
                       className="h-8 object-contain dark:filter dark:invert"
                       src={images.reactLogo}
@@ -175,7 +175,7 @@ const CardGrid = () => {
                   </div>
                 )}
                 {proj.next && (
-                  <div className="flex flex-col justify-center items-center gap-4 py-4 px-4 bg-gray-50 rounded-full filter shadow-md dark:bg-primary-400 dark:hover:bg-primary-300">
+                  <div className="flex flex-col justify-center items-center gap-4 py-4 px-4 bg-gray-50 rounded-full filter shadow-md cursor-pointer hover:bg-neutral-300 dark:bg-primary-400 dark:hover:bg-primary-300">
                     <img
                       className="h-8 object-contain dark:filter dark:invert"
                       src={images.htmlLogo}
@@ -184,7 +184,7 @@ const CardGrid = () => {
                   </div>
                 )}
                 {proj.hubspot && (
-                  <div className="flex flex-col justify-center items-center gap-4 py-4 px-4 bg-gray-50 rounded-full filter shadow-md dark:bg-primary-400 dark:hover:bg-primary-300">
+                  <div className="flex flex-col justify-center items-center gap-4 py-4 px-4 bg-gray-50 rounded-full filter shadow-md cursor-pointer hover:bg-neutral-300 dark:bg-primary-400 dark:hover:bg-primary-300">
                     <img
                       className="h-8 object-contain dark:filter dark:invert"
                       src={images.hubspotLogo}
@@ -193,7 +193,7 @@ const CardGrid = () => {
                   </div>
                 )}
                 {proj.tailwind && (
-                  <div className="flex flex-col justify-center items-center gap-4 py-4 px-4 bg-gray-50 rounded-full filter shadow-md dark:bg-primary-400 dark:hover:bg-primary-300">
+                  <div className="flex flex-col justify-center items-center gap-4 py-4 px-4 bg-gray-50 rounded-full filter shadow-md cursor-pointer hover:bg-neutral-300 dark:bg-primary-400 dark:hover:bg-primary-300">
                     <img
                       className="h-8 object-contain dark:filter dark:invert"
                       src={images.tailwindLogo}
