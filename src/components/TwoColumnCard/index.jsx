@@ -60,10 +60,10 @@ const TwoColumnCard = () => {
 
         <ul className="text-base text-primary-400 list-inside list-disc dark:text-neutral-200">
           <li>
-            Developed web apps using JavaScript, React, NextJS, and Tailwind.
-            Also responsible on making the websites responsive from{" "}
-            <strong> mobile {">"} big screen monitors!</strong>
+            Developed web applications using JavaScript, React, NextJS, and
+            Tailwind.
           </li>
+          <li>Creating responsive web applications.</li>
           <li>Developed CMS Websites through HubSpot CMS</li>
           <li>
             Responsible on maintaining and fixing bugs on current websites
