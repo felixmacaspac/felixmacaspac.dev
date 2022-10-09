@@ -20,3 +20,14 @@ The page will automatically reload if you make changes to the code.<br>
 ### `npm run build`
 
 Builds the app for production to the `dist` folder.<br>
+
+### Technology Used:
+- [Tailwind](https://tailwindcss.com/)
+- [Vite](https://vitejs.dev/)
+- [React](https://reactjs.org/)
+- [EmailJS](https://www.emailjs.com/)
+- [HeadlessUI](https://headlessui.com/)
+- [Heroicons](https://heroicons.com/)
+
+### Animations:
+- [Framer Motion](https://www.framer.com/motion/)
