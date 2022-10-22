@@ -13,10 +13,10 @@ export const Form = () => {
   const sendEmail = (formData) => {
     emailjs
       .send(
-        "service_8nmou3v",
-        "template_21082ug",
+        import.meta.env.VITE_EMAIL_JS_SERVICE_ID, // EmailJS service ID
+        import.meta.env.VITE_EMAIL_JS_TEMPLATE_ID, // EmailJS template ID
         formData,
-        "RZpmaXyI41au3u5bf"
+        import.meta.env.VITE_EMAIL_JS_PUBLIC_KEY // EmailJS public key
       )
       .then(
         (result) => {
@@ -139,7 +139,7 @@ export const Form = () => {
           <div className="w-full flex">
             <a
               href="/"
-              className="bg-secondary text-center font-medium uppercase px-4 py-4 rounded-lg w-full text-primary dark:text-white"
+              className="bg-secondary text-center font-medium uppercase px-4 py-4 rounded-lg w-full text-white"
             >
               GO BACK TO HOMEPAGE
             </a>
