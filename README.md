@@ -20,6 +20,9 @@ The page will automatically reload if you make changes to the code.<br>
 ### `npm run build`
 
 Builds the app for production to the `dist` folder.<br>
+---
+### EmailJS:
+- Add your credentials in the `.env.example` in order to use the form with emailJS
 
 ### Technology Used:
 - [Tailwind](https://tailwindcss.com/)
