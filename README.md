@@ -1,8 +1,7 @@
-# 2022 Tailwind + React + Vite portfolio. 
+# Vite react & Tailwind portfolio. 
 
-This will be my 2022 portfolio using React + Tailwind + Vite. 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/96df2662-043f-4c04-b08d-2dce8c5e7eab/deploy-status)](https://app.netlify.com/sites/felixdev/deploys)
 
----
 ## Steps to run: 
 
 ### 1. `npm install`
