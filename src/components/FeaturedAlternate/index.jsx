@@ -11,7 +11,6 @@ const projects = [
     heading: "Bluecheck",
     description:
       "<Also>One of my first freelance project.<p/> <br/> <p>I had some fun working with this project <i>independently.</i> Also improved a lot with the HubSpot CMS and tailwind CSS</p>",
-    websiteLink: "https://www.bluecheck.me/",
     html: true,
     css: true,
     javascript: true,
