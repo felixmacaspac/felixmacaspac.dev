@@ -80,7 +80,7 @@ export const Form = () => {
             <textarea
               placeholder="Send me a message! I don't bite"
               name="message"
-              className="text-primary bg-neutral w-full rounded-md py-4 px-4 transition-all text-sm border border-solid border-transparent outline-none focus:border-secondary md:text-base"
+              className="text-primary resize-none bg-neutral w-full rounded-md py-4 px-4 transition-all text-sm border border-solid border-transparent outline-none focus:border-secondary md:text-base"
               {...register("message", { required: true })}
             />
             {errors.message && (
