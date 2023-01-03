@@ -76,19 +76,11 @@ const TabSection = () => {
               HubSpot CMS Developer | Frontend Developer
             </h2>
             <p className="text-base font-normal text-neutral-700 dark:text-neutral-300">
-              As a self-taught front-end engineer with nearly two years of
-              experience and an incoming freshman at the National University of
-              the Philippines pursuing a Bachelor of Science in Computer Science
-              with a specialization in machine learning (BSCS-ML), I am very
-              excited about new web development technologies.
-            </p>
-            <br />
-            <p className="text-base font-normal text-neutral-700 dark:text-neutral-300">
-              I'm also a Certified HubSpot CMS Developer who works on HubSpot
-              CMS-related projects with HubL, HTML, CSS, and JavaScript. I've
-              also had a lot of fun working on some fantastic projects that make
-              use of React, Nextjs, and Tailwind. In the future, I hope to learn
-              typescript.
+              Front-end engineer with nearly two years of experience. Also a
+              certified HubSpot CMS Developer who works on HubSpot CMS-related
+              projects with HubL, HTML, CSS, and JavaScript. Also working on
+              some fantastic projects that make use of React, Nextjs, and
+              Tailwind.
             </p>
             <br />
             <h3 className="font-semibold text-xl mb-2">Certifications 📝:</h3>
