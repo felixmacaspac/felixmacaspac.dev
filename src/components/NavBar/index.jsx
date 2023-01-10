@@ -76,13 +76,17 @@ export default function NavBar() {
                 <img
                   className="h-12 w-auto"
                   src={images.brandLogoDark}
-                  alt=""
+                  alt="brand icon"
+                  height={12}
+                  width={245}
                 />
               ) : (
                 <img
                   className="h-12 w-auto"
                   src={images.brandLogoLight}
-                  alt=""
+                  alt="brand icon"
+                  height={12}
+                  width={245}
                 />
               )}
             </a>
