@@ -142,7 +142,9 @@ const CardGrid = () => {
                     <img
                       className="h-8 object-contain dark:filter dark:invert"
                       src={images.htmlLogo}
-                      alt=""
+                      alt="html logo"
+                      width={32}
+                      height={32}
                     />
                   </div>
                 )}
@@ -151,7 +153,9 @@ const CardGrid = () => {
                     <img
                       className="h-8 object-contain dark:filter dark:invert"
                       src={images.cssLogo}
-                      alt=""
+                      alt="css logo"
+                      width={32}
+                      height={32}
                     />
                   </div>
                 )}
@@ -160,7 +164,9 @@ const CardGrid = () => {
                     <img
                       className="h-8 object-contain dark:filter dark:invert"
                       src={images.javascriptLogo}
-                      alt=""
+                      alt="javascript logo"
+                      width={32}
+                      height={32}
                     />
                   </div>
                 )}
@@ -169,7 +175,9 @@ const CardGrid = () => {
                     <img
                       className="h-8 object-contain dark:filter dark:invert"
                       src={images.reactLogo}
-                      alt=""
+                      alt="react logo"
+                      width={32}
+                      height={32}
                     />
                   </div>
                 )}
@@ -178,7 +186,9 @@ const CardGrid = () => {
                     <img
                       className="h-8 object-contain dark:filter dark:invert"
                       src={images.htmlLogo}
-                      alt=""
+                      alt="nextJS logo"
+                      width={32}
+                      height={32}
                     />
                   </div>
                 )}
@@ -187,7 +197,9 @@ const CardGrid = () => {
                     <img
                       className="h-8 object-contain dark:filter dark:invert"
                       src={images.hubspotLogo}
-                      alt=""
+                      alt="hubspot logo"
+                      width={32}
+                      height={32}
                     />
                   </div>
                 )}
@@ -196,7 +208,9 @@ const CardGrid = () => {
                     <img
                       className="h-8 object-contain dark:filter dark:invert"
                       src={images.tailwindLogo}
-                      alt=""
+                      alt="tailwind logo"
+                      width={32}
+                      height={32}
                     />
                   </div>
                 )}

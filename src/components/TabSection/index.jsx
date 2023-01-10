@@ -139,6 +139,8 @@ const TabSection = () => {
               className="h-full w-full z-10 object-cover object-top rounded-lg filter shadow-lg"
               alt="Image Felix"
               loading="lazy"
+              width={664}
+              height={450}
               onLoad={() => setIsLoaded(true)}
             />
           </motion.div>
@@ -162,6 +164,8 @@ const TabSection = () => {
                     src={logo.image}
                     alt={logo.title}
                     loading="lazy"
+                    width={56}
+                    height={56}
                   />
                   <h6 className="text-xl font-semibold text-primary dark:text-white">
                     {logo.title}
