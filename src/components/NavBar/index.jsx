@@ -26,6 +26,11 @@ const navlinks = [
     name: "Projects",
     href: "#projects",
   },
+  {
+    name: "HubSpot Components",
+    href: null,
+    type: "wip", // could be "new" or "wip".
+  },
 ];
 
 export default function NavBar() {
@@ -69,7 +74,7 @@ export default function NavBar() {
         transition={{ type: "linear", duration: 0.5 }}
         className="container"
       >
-        <div className="flex justify-end items-center px-0 py-6 gap-4 sm:px-6 lg:gap-10">
+        <div className="flex justify-end items-center px-0 py-4 gap-4 sm:px-6 lg:py-8 lg:gap-10">
           <div className="mr-auto">
             <a href="#home">
               {darkTheme ? (
@@ -91,7 +96,7 @@ export default function NavBar() {
               )}
             </a>
           </div>
-          <div className="-mr-2 -my-2 md:hidden">
+          <div className="-mr-2 -my-2 lg:hidden">
             <Popover.Button className="rounded-md p-2 inline-flex items-center justify-center text-primary focus:outline-none focus:ring-2 focus:ring-inset focus:ring-secondary dark:text-white">
               <span className="sr-only">Open menu</span>
               <MenuAlt1Icon
@@ -102,19 +107,33 @@ export default function NavBar() {
           </div>
           <Popover.Group
             as="nav"
-            className="hidden space-x-6 md:flex lg:space-x-10"
+            className="hidden space-x-6 lg:flex lg:space-x-10"
           >
             {navlinks.map((navlink) => (
               <a
                 key={navlink.name}
                 href={navlink.href}
-                className="text-base font-medium text-primary relative before:absolute before:-bottom-1 before:h-0.5 before:w-full before:scale-x-0 before:transition before:bg-primary hover:before:scale-x-100 dark:hover:text-neutral dark:text-white dark:before:bg-secondary-400"
+                className={
+                  navlink.href
+                    ? "text-base font-medium text-primary relative before:absolute before:-bottom-1 before:h-0.5 before:w-full before:scale-x-0 before:transition before:bg-primary hover:before:scale-x-100 dark:hover:text-neutral dark:text-white dark:before:bg-secondary-400"
+                    : "text-base font-medium text-primary relative dark:text-white dark:before:bg-secondary-400 cursor-not-allowed"
+                }
               >
                 {navlink.name}
+                {navlink.type === "new" && (
+                  <span className="block absolute -bottom-6 right-0 text-xs bg-green-400 text-primary py-1 px-2 rounded-md font-bold">
+                    NEW
+                  </span>
+                )}
+                {navlink.type === "wip" && (
+                  <span className="block absolute -bottom-6 right-0 text-xs bg-yellow-400 text-primary py-1 px-2 rounded-md font-bold">
+                    WIP
+                  </span>
+                )}
               </a>
             ))}
           </Popover.Group>
-          <div className="hidden md:flex">
+          <div className="hidden lg:flex">
             <ContactModal toggleOpen={modalIsOpen} toggleClose={toggleModal}>
               <Form />
             </ContactModal>
@@ -135,7 +154,7 @@ export default function NavBar() {
               },
             }}
             whileTap={{ y: -5 }}
-            className="text-primary hidden transition-opacity md:block dark:text-white"
+            className="text-primary hidden transition-opacity lg:block dark:text-white"
             onClick={handleMode}
           >
             {darkTheme ? (
@@ -157,7 +176,7 @@ export default function NavBar() {
         >
           <Popover.Panel
             focus
-            className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden"
+            className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right lg:hidden"
           >
             <div className="rounded-lg shadow-lg filter drop-shadow-lg bg-primary-700">
               <div className="pt-5 pb-6 px-5">
@@ -200,13 +219,23 @@ export default function NavBar() {
                       <a
                         key={navlink.name}
                         href={navlink.href}
-                        className="text-base font-medium text-white"
+                        className="text-base font-medium text-white w-max relative"
                       >
                         {navlink.name}
+                        {navlink.type === "new" && (
+                          <span className="block absolute right-0 text-xs bg-green-400 text-primary py-1 px-2 rounded-md font-bold">
+                            NEW
+                          </span>
+                        )}
+                        {navlink.type === "wip" && (
+                          <span className="block absolute top-0 -right-12 text-xs bg-yellow-400 text-primary py-1 px-2 rounded-md font-bold">
+                            WIP
+                          </span>
+                        )}
                       </a>
                     ))}
                   </nav>
-                  <div className="mt-10 flex md:hidden">
+                  <div className="mt-10 flex lg:hidden">
                     <ContactModal
                       toggleOpen={modalIsOpen}
                       toggleClose={toggleModal}
