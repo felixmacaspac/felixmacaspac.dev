@@ -60,13 +60,17 @@ const TwoColumnCard = () => {
 
         <ul className="text-base text-primary-400 list-inside list-disc dark:text-neutral-200">
           <li>
-            Developed web applications using JavaScript, React, NextJS, and
-            Tailwind.
+            Developed web applications using JavaScript, React, Tailwind, and
+            NextJS.
           </li>
-          <li>Creating responsive web applications.</li>
-          <li>Developed CMS Websites through HubSpot CMS</li>
           <li>
-            Responsible on maintaining and fixing bugs on current websites
+            Created and developed websites, landing pages, and email templates
+            using HubSpot CMS that are easy for clients to edit and optimized
+            for different devices
+          </li>
+          <li>
+            Assisted in the maintenance and troubleshooting of client's websites
+            to ensure smooth performance and user satisfaction.
           </li>
         </ul>
       </motion.div>
@@ -119,11 +123,20 @@ const TwoColumnCard = () => {
           </div>
         </div>
         <ul className="text-base text-primary-400 list-inside list-disc dark:text-neutral-200">
-          <li>Implementing CMS websites from scratch using HubSpot CMS</li>
-          <li>Helped clients with simple bug fixes</li>
           <li>
-            Received top rated badge after working with 6 clients within 4
-            months!
+            Developed and implemented CMS websites utilizing the HubSpot
+            platform, resulting in an efficient and user-friendly experience for
+            clients
+          </li>
+          <li>
+            Successfully resolved various technical issues for clients,
+            contributing to a positive and productive project experience
+          </li>
+          <li>
+            Achieved the top-rated badge on Upwork within four months of
+            starting as a freelancer, demonstrating exceptional performance and
+            customer satisfaction in delivering high-quality front-end
+            development services.
           </li>
         </ul>
       </motion.div>

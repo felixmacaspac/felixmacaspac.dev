@@ -76,11 +76,15 @@ const TabSection = () => {
               HubSpot CMS Developer | Frontend Developer
             </h2>
             <p className="text-base font-normal text-neutral-700 dark:text-neutral-300">
-              Front-end engineer with nearly two years of experience. Also a
-              certified HubSpot CMS Developer who works on HubSpot CMS-related
-              projects with HubL, HTML, CSS, and JavaScript. Also working on
-              some fantastic projects that make use of React, Nextjs, and
-              Tailwind.
+              Front-end Engineer with 2+ years of experience in developing and
+              implementing responsive, user-friendly websites and web
+              applications. Proficient in the use of HubSpot CMS, HubL, HTML,
+              CSS, and JavaScript. Skilled in utilizing modern front-end
+              technologies such as React, Nextjs, and Tailwind to deliver
+              exceptional user experiences. Responsible for bug fixing and
+              maintaining current projects. Certified HubSpot CMS Developer with
+              a track record of successfully completing projects utilizing the
+              platform.
             </p>
             <br />
             <h3 className="font-semibold text-xl mb-2">Certifications 📝:</h3>
