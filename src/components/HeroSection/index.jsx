@@ -13,6 +13,11 @@ const socials = [
     alt: "Github Icon",
     link: "https://github.com/felixmacaspac",
   },
+  {
+    logo: images.codepenIcon,
+    alt: "Codepen Icon",
+    link: "https://codepen.io/fmcmacaspac",
+  },
 ];
 
 const HeroSection = () => {
