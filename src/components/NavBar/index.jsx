@@ -27,9 +27,8 @@ const navlinks = [
     href: "#projects",
   },
   {
-    name: "HubSpot Components",
-    href: null,
-    type: "wip", // could be "new" or "wip".
+    name: "Uses",
+    href: "#uses",
   },
 ];
 
