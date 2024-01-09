@@ -56,6 +56,19 @@ const projects = [
     css: true,
     javascript: true,
   },
+  {
+    id: 5,
+    image: images.agencyImage,
+    heading: "Agency Website",
+    description:
+      "<p>A sample agency website, with blog listing and blog single. I also implemented this in a way that it would be easy for the HubSpot content editors to edit it.</p>",
+    websiteLink: "https://22288485.hs-sites.com/",
+    // techno
+    html: true,
+    css: true,
+    javascript: true,
+    hubspot: true,
+  },
 ];
 
 const CardGrid = () => {
