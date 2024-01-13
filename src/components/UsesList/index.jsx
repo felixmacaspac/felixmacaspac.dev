@@ -76,8 +76,11 @@ const UsesList = () => {
               {section.section}
             </h2>
             <ul>
-              {section.items.map((item) => (
-                <li className="list-inside list-disc leading-loose text-neutral-700 dark:text-neutral-300">
+              {section.items.map((item, index) => (
+                <li
+                  key={index}
+                  className="list-inside list-disc leading-loose text-neutral-700 dark:text-neutral-300"
+                >
                   <a href={item.link} target="_blank" rel="noopener noreferrer">
                     {item.name}
                     {item.link && (

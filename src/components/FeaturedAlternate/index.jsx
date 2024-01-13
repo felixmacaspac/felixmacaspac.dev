@@ -63,6 +63,7 @@ const projects = [
     description:
       "<p>A sample agency website, with blog listing and blog single. I also implemented this in a way that it would be easy for the HubSpot content editors to edit it.</p>",
     websiteLink: "https://22288485.hs-sites.com/",
+    githubLink: "https://github.com/felixmacaspac/hubspot-agency-demo",
     // techno
     html: true,
     css: true,
