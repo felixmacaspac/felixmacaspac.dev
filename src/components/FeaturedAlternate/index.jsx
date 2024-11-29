@@ -7,6 +7,19 @@ import { motion } from "framer-motion";
 const projects = [
   {
     id: 1,
+    image: images.agencyImage,
+    heading: "Agency Website",
+    description:
+      "<p>A sample agency website, with blog listing and blog single. I also implemented this in a way that it would be easy for the HubSpot content editors to edit it.</p>",
+    websiteLink: "https://22288485.hs-sites.com/",
+    // techno
+    html: true,
+    css: true,
+    javascript: true,
+    hubspot: true,
+  },
+  {
+    id: 2,
     image: images.bluecheckImage,
     heading: "Bluecheck",
     description:
@@ -18,7 +31,20 @@ const projects = [
     tailwind: true,
   },
   {
-    id: 2,
+    id: 3,
+    image: images.slothImage,
+    heading: "The Language Sloth Website",
+    description:
+      "<p>I would say this is the first projet that I collaborated with an online friend (who is responsible for the backend development) for the backend we used django with a combination of the discord auth. <br> <br> Initially the plan was to implement this using react but due to some time conflict we agreed to just use django + basic HTML & TailwindCSS.</p>",
+    websiteLink: "https://languagesloth.com/",
+    // techno
+    html: true,
+    css: true,
+    javascript: true,
+    tailwind: true,
+  },
+  {
+    id: 4,
     image: images.shortlyImage,
     heading: "Shortly",
     description:
@@ -31,7 +57,7 @@ const projects = [
     javascript: true,
   },
   {
-    id: 3,
+    id: 5,
     image: images.sunnysideImage,
     heading: "Sunnyside",
     description:
@@ -44,7 +70,7 @@ const projects = [
     javascript: true,
   },
   {
-    id: 4,
+    id: 6,
     image: images.catifyImage,
     heading: "Catify",
     description:

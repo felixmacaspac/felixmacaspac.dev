@@ -43,6 +43,25 @@ const logos = [
   },
 ];
 
+const certifications = [
+  {
+    title: "Hubspot CMS for Developers",
+    link: "https://app.hubspot.com/academy/achievements/clt3bnwb/en/1/felix-macaspac/hubspot-cms-for-developers",
+  },
+  {
+    title: "HubSpot CMS for Developers II",
+    link: "https://app.hubspot.com/academy/achievements/c7mbsmjz/en/1/felix-macaspac/hubspot-cms-for-developers-ii-best-practices",
+  },
+  {
+    title: "Hubspot CMS for Marketers",
+    link: "https://app.hubspot.com/academy/achievements/4nsfl59x/en/1/felix-macaspac/hubspot-cms-for-marketers",
+  },
+  {
+    title: "Hubspot Marketing Software",
+    link: "https://app.hubspot.com/academy/achievements/9z322p95/en/1/felix-macaspac/hubspot-marketing-software",
+  },
+];
+
 const TabSection = () => {
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -89,42 +108,21 @@ const TabSection = () => {
             <br />
             <h3 className="font-semibold text-xl mb-2">Certifications 📝:</h3>
             <ul className="list-inside list-disc text-neutral-700 dark:text-neutral-300">
-              <li>
-                <a
-                  href="https://app.hubspot.com/academy/achievements/9z322p95/en/1/felix-macaspac/hubspot-marketing-software"
-                  className="underline"
-                  target="_blank"
-                >
-                  Hubspot Marketing Software
+              {certifications.map((certification, index) => (
+                <li key={index}>
+                  <a
+                    href={certification.link}
+                    className="underline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {certification.title}
+                  </a>
                   <span className="ml-1 inline-flex align-middle">
                     <ExternalLinkIcon className="h-5 w-5" />
                   </span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://app.hubspot.com/academy/achievements/clt3bnwb/en/1/felix-macaspac/hubspot-cms-for-developers"
-                  className="underline"
-                  target="_blank"
-                >
-                  Hubspot CMS for Developers
-                </a>
-                <span className="ml-1 inline-flex align-middle">
-                  <ExternalLinkIcon className="h-5 w-5" />
-                </span>
-              </li>
-              <li>
-                <a
-                  href="https://app.hubspot.com/academy/achievements/4nsfl59x/en/1/felix-macaspac/hubspot-cms-for-marketers"
-                  className="underline"
-                  target="_blank"
-                >
-                  Hubspot CMS for Marketers
-                </a>
-                <span className="ml-1 inline-flex align-middle">
-                  <ExternalLinkIcon className="h-5 w-5" />
-                </span>
-              </li>
+                </li>
+              ))}
             </ul>
           </motion.div>
 

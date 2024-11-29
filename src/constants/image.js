@@ -15,8 +15,10 @@ import hubspotLogo from "../assets/logo/hubspot-logo.svg";
 import felixImage from "../assets/whacky-felix.png";
 import bluecheckImage from "../assets/projects/bluecheck-visible.png";
 import catifyImage from "../assets/projects/catify-visible.png";
+import agencyImage from "../assets/projects/agency-visible.png";
 import shortlyImage from "../assets/projects/shortly-visible.png";
 import sunnysideImage from "../assets/projects/sunnyside-visible.png";
+import slothImage from "../assets/projects/languagesloth-visible.png";
 import errorIllustration from "../assets/illustrations/404-vector.svg";
 import successIllustration from "../assets/illustrations/success-vector.svg";
 import brandLogoLight from "../assets/icons/logo-light.png";
@@ -40,8 +42,10 @@ export default {
   felixImage,
   bluecheckImage,
   catifyImage,
+  agencyImage,
   shortlyImage,
   sunnysideImage,
+  slothImage,
   errorIllustration,
   successIllustration,
   brandLogoLight,
