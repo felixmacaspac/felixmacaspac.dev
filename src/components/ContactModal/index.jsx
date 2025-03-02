@@ -2,6 +2,7 @@ import React from "react";
 import { XIcon } from "@heroicons/react/outline";
 import Modal from "react-modal";
 import classnames from "classnames";
+import HubSpotForm from "./HubspotForm";
 
 const ContactModal = ({ toggleOpen, toggleClose, children, className }) => {
   const modalClassNames = classnames(
@@ -40,7 +41,9 @@ const ContactModal = ({ toggleOpen, toggleClose, children, className }) => {
           {" "}
           <XIcon className="w-10 h-10" />
         </button>
-        <div className="w-full  dark:text-white">{children}</div>
+        <div className="w-full  dark:text-white">
+          <HubSpotForm />
+        </div>
       </Modal>
     </div>
   );
