@@ -1,35 +1,46 @@
-# Vite react & Tailwind portfolio. 
+# Astro Starter Kit: Basics
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/96df2662-043f-4c04-b08d-2dce8c5e7eab/deploy-status)](https://app.netlify.com/sites/felixdev/deploys)
+```sh
+npm create astro@latest -- --template basics
+```
 
-## Steps to run: 
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-### 1. `npm install`
+## 🚀 Project Structure
 
-Inside the project on the package.json, you can run some scripts that you can run. 
+Inside of your Astro project, you'll see the following folders and files:
 
-### 2. `npm run dev`
+```text
+/
+├── public/
+│   └── favicon.svg
+├── src
+│   ├── assets
+│   │   └── astro.svg
+│   ├── components
+│   │   └── Welcome.astro
+│   ├── layouts
+│   │   └── Layout.astro
+│   └── pages
+│       └── index.astro
+└── package.json
+```
 
-Runs the app in development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
 
-The page will automatically reload if you make changes to the code.<br>
+## 🧞 Commands
 
----
-### `npm run build`
+All commands are run from the root of the project, from a terminal:
 
-Builds the app for production to the `dist` folder.<br>
----
-### EmailJS:
-- Add your credentials in the `.env.example` in order to use the form with emailJS
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-### Technology Used:
-- [Tailwind](https://tailwindcss.com/)
-- [Vite](https://vitejs.dev/)
-- [React](https://reactjs.org/)
-- [EmailJS](https://www.emailjs.com/)
-- [HeadlessUI](https://headlessui.com/)
-- [Heroicons](https://heroicons.com/)
+## 👀 Want to learn more?
 
-### Animations:
-- [Framer Motion](https://www.framer.com/motion/)
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).

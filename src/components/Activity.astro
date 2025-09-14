@@ -1,0 +1,242 @@
+---
+import type { SectionProps } from '../types';
+import { activities as defaultActivities } from '../../data/activities';
+
+export interface Activity {
+  title: string;
+  type: 'speaking' | 'competition' | 'community' | 'certification' | 'achievement';
+  description: string;
+  date?: string;
+  location?: string;
+  organization?: string;
+  link?: string;
+  image?: string;
+}
+
+export type Props = SectionProps & {
+  activities?: Activity[];
+};
+
+const { id = "activities", className = '', activities = [] } = Astro.props;
+
+
+
+const allActivities = activities.length > 0 ? activities : defaultActivities;
+
+const getTypeStyles = (type: Activity['type']) => {
+  const styles = {
+    speaking: { bg: 'bg-blue-900/30', text: 'text-blue-300', border: 'border-blue-800/50' },
+    competition: { bg: 'bg-amber-900/30', text: 'text-amber-300', border: 'border-amber-800/50' },
+    community: { bg: 'bg-green-900/30', text: 'text-green-300', border: 'border-green-800/50' },
+    certification: { bg: 'bg-purple-900/30', text: 'text-purple-300', border: 'border-purple-800/50' },
+    achievement: { bg: 'bg-red-900/30', text: 'text-red-300', border: 'border-red-800/50' }
+  };
+  return styles[type] || { bg: 'bg-zinc-800', text: 'text-zinc-300', border: 'border-zinc-800' };
+};
+---
+
+<section id={id} class={`w-full pb-20 ${className}`}>
+  <h2 class="text-sm font-semibold mb-12 text-center opacity-0 translate-y-4 transition-all duration-700 ease-out" data-animate>
+    activities & achievements
+  </h2>
+  
+  <div class="activities-carousel relative overflow-hidden">
+    <!-- Main carousel track -->
+    <div class="activities-track flex gap-6 transition-transform duration-1000 ease-linear will-change-transform">
+      <!-- First set of cards -->
+      {allActivities.map((activity, index) => {
+        const typeStyles = getTypeStyles(activity.type);
+        const CardWrapper = activity.link ? 'a' : 'div';
+        const linkProps = activity.link ? {
+          href: activity.link,
+          target: "_blank",
+          rel: "noopener noreferrer",
+          class: `activity-card group flex-shrink-0 w-80 p-6 border border-zinc-800 bg-zinc-900/50 backdrop-blur-sm rounded-xl hover:border-zinc-600/50 transition-all duration-300 cursor-pointer`
+        } : {
+          class: `activity-card flex-shrink-0 w-80 p-6 border border-zinc-800  bg-zinc-900/50 backdrop-blur-sm rounded-xl hover:border-zinc-600/50 transition-all duration-300`
+        };
+        
+        return (
+          <CardWrapper {...linkProps} data-index={index}>
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <span class={`inline-flex items-center px-3 py-1 text-xs font-medium rounded-full ${typeStyles.bg} ${typeStyles.text} border ${typeStyles.border}`}>
+                  {activity.type}
+                </span>
+                {activity.date && (
+                  <span class="text-xs text-zinc-400 font-mono">{activity.date}</span>
+                )}
+              </div>
+              
+              <div class="space-y-2">
+                <h3 class="font-semibold text-base text-white leading-tight">
+                  {activity.title}
+                  {activity.link && (
+                    <span class="inline-block ml-2 opacity-0 group-hover:opacity-100 transition-opacity text-zinc-400">
+                      ↗
+                    </span>
+                  )}
+                </h3>
+                
+                {activity.organization && (
+                  <p class="text-sm text-zinc-300 font-medium">
+                    {activity.organization}
+                    {activity.location && (
+                      <span class="text-zinc-400 font-normal"> • {activity.location}</span>
+                    )}
+                  </p>
+                )}
+                
+                <p class="text-sm text-zinc-400 leading-relaxed">
+                  {activity.description}
+                </p>
+              </div>
+            </div>
+          </CardWrapper>
+        );
+      })}
+      
+      <!-- Duplicate set for infinite loop -->
+      {allActivities.map((activity, index) => {
+        const typeStyles = getTypeStyles(activity.type);
+        const CardWrapper = activity.link ? 'a' : 'div';
+        const linkProps = activity.link ? {
+          href: activity.link,
+          target: "_blank",
+          rel: "noopener noreferrer",
+          class: `activity-card group flex-shrink-0 w-80 p-6 border border-zinc-800 bg-zinc-900/50 backdrop-blur-sm rounded-xl hover:border-zinc-600/50 transition-all duration-300 cursor-pointer`
+        } : {
+          class: `activity-card flex-shrink-0 w-80 p-6 border border-zinc-800 bg-zinc-900/50 backdrop-blur-sm rounded-xl hover:border-zinc-600/50 transition-all duration-300`
+        };
+        
+        return (
+          <CardWrapper {...linkProps} data-index={index + allActivities.length}>
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <span class={`inline-flex items-center px-3 py-1 text-xs font-medium rounded-full ${typeStyles.bg} ${typeStyles.text} border ${typeStyles.border}`}>
+                  {activity.type}
+                </span>
+                {activity.date && (
+                  <span class="text-xs text-zinc-400 font-mono">{activity.date}</span>
+                )}
+              </div>
+              
+              <div class="space-y-2">
+                <h3 class="font-semibold text-base text-white leading-tight">
+                  {activity.title}
+                  {activity.link && (
+                    <span class="inline-block ml-2 opacity-0 group-hover:opacity-100 transition-opacity text-zinc-400">
+                      ↗
+                    </span>
+                  )}
+                </h3>
+                
+                {activity.organization && (
+                  <p class="text-sm text-zinc-300 font-medium">
+                    {activity.organization}
+                    {activity.location && (
+                      <span class="text-zinc-400 font-normal"> • {activity.location}</span>
+                    )}
+                  </p>
+                )}
+                
+                <p class="text-sm text-zinc-400 leading-relaxed">
+                  {activity.description}
+                </p>
+              </div>
+            </div>
+          </CardWrapper>
+        );
+      })}
+    </div>
+    
+    <div class="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-[#111] to-transparent pointer-events-none z-10"></div>
+    <div class="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-[#111] to-transparent pointer-events-none z-10"></div>
+  </div>
+</section>
+
+<script>
+  const initActivitiesCarousel = () => {
+    const track = document.querySelector('.activities-track');
+    const carousel = document.querySelector('.activities-carousel');
+    const titleElement = document.querySelector('[data-animate]');
+    
+    if (!track || !carousel) return;
+    
+    const cards = track.querySelectorAll('.activity-card');
+    const totalCards = cards.length / 2; 
+    const cardWidth = 320 + 24;
+    const totalWidth = totalCards * cardWidth;
+    
+    let currentTranslate = 0;
+    let animationId: number | null = null;
+    let isPaused = false;
+    const speed = 0.5; 
+
+    const animateTitle = () => {
+      if (titleElement) {
+        setTimeout(() => {
+          titleElement.classList.remove('opacity-0', 'translate-y-4');
+          titleElement.classList.add('opacity-100', 'translate-y-0');
+        }, 300);
+      }
+    };
+
+    const animate = () => {
+      if (!isPaused) {
+        currentTranslate -= speed;
+        
+        if (Math.abs(currentTranslate) >= totalWidth) {
+          currentTranslate = 0;
+        }
+        
+        (track as HTMLElement).style.transform = `translateX(${currentTranslate}px)`;
+      }
+      
+      animationId = requestAnimationFrame(animate);
+    };
+
+    const pauseAnimation = () => {
+      isPaused = true;
+    };
+
+    const resumeAnimation = () => {
+      isPaused = false;
+    };
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        isPaused = true;
+      } else {
+        isPaused = false;
+      }
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animate();
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    });
+
+    observer.observe(carousel);
+    animateTitle();
+
+    return () => {
+      if (animationId) {
+        cancelAnimationFrame(animationId);
+      }
+    };
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initActivitiesCarousel);
+  } else {
+    initActivitiesCarousel();
+  }
+</script>

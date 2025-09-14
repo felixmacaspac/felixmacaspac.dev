@@ -1,0 +1,73 @@
+---
+import type { LayoutProps } from '../types';
+import "../styles/global.css";
+export type Props = LayoutProps;
+
+const { 
+  title, 
+  description = "Product Engineer at the intersection of design & development",
+} = Astro.props satisfies LayoutProps;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="scroll-gradient fixed bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-black via-black/50 to-transparent pointer-events-none opacity-0 transition-opacity duration-300 ease-out z-50"></div>
+    <slot />
+    
+    <script>
+      function initScrollGradient() {
+        const gradient = document.querySelector('.scroll-gradient');
+        if (!gradient) return;
+        
+        let ticking = false;
+        
+        function updateGradient() {
+          const scrollY = window.scrollY;
+          const windowHeight = window.innerHeight;
+          const documentHeight = document.documentElement.scrollHeight;
+          const scrollPercentage = scrollY / (documentHeight - windowHeight);
+          
+          if (gradient && scrollY > windowHeight * 0.1 && scrollPercentage < 0.95) {
+            gradient.classList.remove('opacity-0');
+            gradient.classList.add('opacity-100');
+          } else if (gradient) {
+            gradient.classList.remove('opacity-100');
+            gradient.classList.add('opacity-0');
+          }
+          
+          ticking = false;
+        }
+        
+        function requestTick() {
+          if (!ticking) {
+            requestAnimationFrame(updateGradient);
+            ticking = true;
+          }
+        }
+        
+        window.addEventListener('scroll', requestTick, { passive: true });
+        updateGradient(); 
+      }
+      
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initScrollGradient);
+      } else {
+        initScrollGradient();
+      }
+    </script>
+  </body>
+</html>
