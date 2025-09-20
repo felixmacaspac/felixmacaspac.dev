@@ -1,32 +1,19 @@
-# Astro Starter Kit: Basics
+## Felix Macaspac - Personal Portfolio
 
-```sh
-npm create astro@latest -- --template basics
-```
+This repository contains the source code for my personal portfolio website, [felixmacaspac.dev](https://felixmacaspac.dev). It's built with [Astro](https://astro.build/) and styled with [Tailwind CSS](https://tailwindcss.com/) to showcase my work as a Frontend and HubSpot CMS Developer.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+### ✨ Features
 
-## 🚀 Project Structure
+- **Built with Astro:** Leveraging Astro for a fast, content-focused website with great performance.
+- **Styled with Tailwind CSS:** Using a utility-first CSS framework for rapid UI development.
+- **Subtle Animations:** Scroll-based animations to enhance user experience.
+- **Showcase of Skills & Projects:** A place to highlight my work and expertise.
 
-Inside of your Astro project, you'll see the following folders and files:
+### 🛠️ Tech Stack
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
-
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+- [Astro](https://astro.build/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [TypeScript](https://www.typescriptlang.org/)
 
 ## 🧞 Commands
 
@@ -41,6 +28,8 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-## 👀 Want to learn more?
+## 🌐 Connect
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- **Website:** felixmacaspac.dev
+- **LinkedIn:** linkedin.com/in/felixmacaspac
+- **GitHub:** github.com/felixmacaspac
