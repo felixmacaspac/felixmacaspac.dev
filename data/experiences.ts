@@ -3,10 +3,10 @@ import type { Experience } from "@/types/index";
 export const experiences: Experience[] = [
   {
     company: "Hububble",
-    role: "Frontend Developer | HubSpot API Integrations",
+    role: "Fullstack Developer",
     period: "May 2021 — Present",
     description:
-      "Contributed to company growth from gold to diamond tier by developing custom HubSpot CMS themes and UI Extensions (React). Worked with custom HubSpot API integrations for different use-cases for different clients. Built internal automation tools that increased team productivity by 70%.",
+      "Contributed to company growth from gold to diamond tier by developing custom HubSpot CMS themes and UI Extensions (React/TypeScript). Worked with custom HubSpot API integrations for different use-cases for different clients. Integrated HubSpot API solutions, serverless functions and internal tools that increased overall efficiency of the company.",
     current: true,
     image: "/logo/hububble-logo.png",
   },
@@ -21,7 +21,7 @@ export const experiences: Experience[] = [
   },
   {
     company: "Independent Contractor",
-    role: "Frontend Developer | HubSpot CMS",
+    role: "Frontend Developer",
     period: "December 2022 — July 2025",
     description:
       "Delivered specialized HubSpot CMS and frontend development solutions for international clients. Successfully migrated legacy themes to modern architecture with performance improvements.",
