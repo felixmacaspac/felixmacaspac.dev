@@ -1,0 +1,60 @@
+---
+import type { SectionProps } from '../types';
+
+export type Props = SectionProps;
+
+const { id, className = '' } = Astro.props satisfies SectionProps;
+---
+
+<section id={id} class={`group max-w-2xl mx-auto px-6 pt-24 pb-20 ${className}`}>
+  <h1 class="pl-26 relative flex w-max items-baseline hero-item opacity-0 translate-y-4 transition-all duration-700 ease-out text-3xl font-normal leading-tight" data-index="0">
+    Felix Macaspac
+    <div class="absolute -top-4 left-0">
+      <img class="w-24 object-contain h-24 group-hover:hidden" src="/avatar-default.png" alt="">
+      <img class="w-24 object-contain h-24 hidden group-hover:block" src="/avatar-hi.png" alt="">
+    </div>
+  </h1>
+  <p class="pl-26 text-base text-zinc-400 mt-1 hero-item opacity-0 translate-y-4 transition-all duration-700 ease-out" data-index="1">Frontend Developer @ <a href="https://hububble.com">Hububble</a></p>
+  
+  <div class="text-zinc-300 mt-8">
+    <p class="hero-item opacity-0 translate-y-4 transition-all duration-700 ease-out" data-index="2">I'm a frontend developer with 5 years of experience, specializing in HubSpot CMS development — creating custom themes, templates, modules, and UI extensions.</p>
+    <p class="hero-item opacity-0 translate-y-4 transition-all duration-700 ease-out block mt-4" data-index="3"> In my free time, I try my best to create fun and useful web applications that I actually use along with a small number of other users.</p>  
+    <p class="hero-item opacity-0 translate-y-4 transition-all duration-700 ease-out block mt-4" data-index="4">you can find me at
+      <a href="https://www.linkedin.com/in/felixmacaspac/" target="_blank" rel="noopener noreferrer" class="wavy-link">LinkedIn</a> or
+      <a href="https://github.com/felixmacaspac" target="_blank" rel="noopener noreferrer" class="wavy-link">GitHub</a>
+    </p>
+  </div>
+</section>
+
+<script>
+  function initHeroAnimations() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const item = entry.target as HTMLElement;
+          const index = parseInt(item.getAttribute('data-index') || '0');
+          
+          setTimeout(() => {
+            item.classList.remove('opacity-0', 'translate-y-4');
+            item.classList.add('opacity-100', 'translate-y-0');
+          }, index * 150);
+          
+          observer.unobserve(item);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    });
+
+    document.querySelectorAll('.hero-item').forEach((item) => {
+      observer.observe(item);
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initHeroAnimations);
+  } else {
+    initHeroAnimations();
+  }
+</script>

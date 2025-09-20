@@ -1,35 +1,35 @@
-# Vite react & Tailwind portfolio. 
+## Felix Macaspac - Personal Portfolio
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/96df2662-043f-4c04-b08d-2dce8c5e7eab/deploy-status)](https://app.netlify.com/sites/felixdev/deploys)
+This repository contains the source code for my personal portfolio website, [felixmacaspac.dev](https://felixmacaspac.dev). It's built with [Astro](https://astro.build/) and styled with [Tailwind CSS](https://tailwindcss.com/) to showcase my work as a Frontend and HubSpot CMS Developer.
 
-## Steps to run: 
+### ✨ Features
 
-### 1. `npm install`
+- **Built with Astro:** Leveraging Astro for a fast, content-focused website with great performance.
+- **Styled with Tailwind CSS:** Using a utility-first CSS framework for rapid UI development.
+- **Subtle Animations:** Scroll-based animations to enhance user experience.
+- **Showcase of Skills & Projects:** A place to highlight my work and expertise.
 
-Inside the project on the package.json, you can run some scripts that you can run. 
+### 🛠️ Tech Stack
 
-### 2. `npm run dev`
+- [Astro](https://astro.build/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [TypeScript](https://www.typescriptlang.org/)
 
-Runs the app in development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 🧞 Commands
 
-The page will automatically reload if you make changes to the code.<br>
+All commands are run from the root of the project, from a terminal:
 
----
-### `npm run build`
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-Builds the app for production to the `dist` folder.<br>
----
-### EmailJS:
-- Add your credentials in the `.env.example` in order to use the form with emailJS
+## 🌐 Connect
 
-### Technology Used:
-- [Tailwind](https://tailwindcss.com/)
-- [Vite](https://vitejs.dev/)
-- [React](https://reactjs.org/)
-- [EmailJS](https://www.emailjs.com/)
-- [HeadlessUI](https://headlessui.com/)
-- [Heroicons](https://heroicons.com/)
-
-### Animations:
-- [Framer Motion](https://www.framer.com/motion/)
+- **Website:** felixmacaspac.dev
+- **LinkedIn:** linkedin.com/in/felixmacaspac
+- **GitHub:** github.com/felixmacaspac

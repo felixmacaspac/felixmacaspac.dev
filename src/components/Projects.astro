@@ -1,0 +1,77 @@
+---
+import { projects } from '../../data/projects';
+import type { SectionProps } from '../types';
+
+export type Props = SectionProps;
+
+const { id = "projects", className = '' } = Astro.props satisfies SectionProps;
+---
+
+<section id={id} class={`max-w-2xl mx-auto px-6 pb-20 ${className}`}>
+  <h2 class="project-item opacity-0 translate-y-4 transition-all duration-700 ease-out text-sm font-semibold mb-8" data-index="0">selected projects</h2>
+  
+  <div class="space-y-8">
+    {projects.map((project, index) => (
+      <a 
+        href={project.link} 
+        target="_blank" 
+        rel="noopener noreferrer"
+        class="project-item opacity-0 translate-y-4 transition-all duration-700 ease-out group block hover:-translate-y-0.5 hover:transition-transform hover:duration-200 hover:ease-out"
+        data-index={index + 1}
+      >
+        <div class="flex items-start gap-4">
+          <div class="flex-1">
+            <div class="flex items-baseline justify-between mb-2">
+              <h3 class="font-medium text-sm">
+                {project.title}
+              </h3>
+            </div>
+            <p class="text-white text-sm leading-relaxed">
+              {project.description}
+            </p>
+            {project.tags && (
+              <div class="flex gap-2 mt-2">
+                {project.tags.map((tag: string) => (
+                  <span class="text-xs text-gray-400">{tag}</span>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      </a>
+    ))}
+  </div>
+</section>
+
+<script>
+  function initProjectAnimations() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const item = entry.target as HTMLElement;
+          const index = parseInt(item.getAttribute('data-index') || '0');
+          
+          setTimeout(() => {
+            item.classList.remove('opacity-0', 'translate-y-4');
+            item.classList.add('opacity-100', 'translate-y-0');
+          }, index * 100);
+          
+          observer.unobserve(item);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    });
+
+    document.querySelectorAll('.project-item').forEach((item) => {
+      observer.observe(item);
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initProjectAnimations);
+  } else {
+    initProjectAnimations();
+  }
+</script>
