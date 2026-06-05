@@ -13,10 +13,10 @@ export const experiences: Experience[] = [
   {
     company: "v0 by Vercel",
     role: "v0 Ambassador",
-    period: "August 2025 — Present",
+    period: "August 2025 — October 2025",
     description:
-      "Prompt engineered frontend components and landing pages with 1000+ users currently forking and utilizing the creations.",
-    current: true,
+      "Prompt engineered frontend components and landing pages with 1000+ users forking and utilizing the creations.",
+    current: false,
     image: "/logo/v0-logo.png",
   },
   {
