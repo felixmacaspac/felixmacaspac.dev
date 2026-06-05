@@ -1,0 +1,24 @@
+# Felix Macaspac
+
+Felix Macaspac is a remote HubSpot CMS and frontend developer for international teams.
+
+Primary expertise:
+- HubSpot CMS themes, templates, and custom modules
+- HubL, HTML, CSS, and JavaScript
+- HubSpot UI extensions with React and TypeScript
+- HubSpot API integrations, serverless functions, and internal tools
+- Next.js, TypeScript, Tailwind CSS, Supabase, and Vercel
+- Remote collaboration with international teams
+
+Credibility signals:
+- Fullstack Developer at Hububble
+- HubSpot Community Champion
+- HubSpot CMS for Developers certification
+- HubSpot CMS for Developers II certification
+- HubSpot Architecture I: Data Models and APIs certification
+- v0 Ambassador
+
+Website: https://felixmacaspac.dev/
+LinkedIn: https://www.linkedin.com/in/felixmacaspac/
+GitHub: https://github.com/felixmacaspac
+HubSpot Community: https://community.hubspot.com/t5/user/viewprofilepage/user-id/489302

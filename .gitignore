@@ -25,3 +25,6 @@ pnpm-debug.log*
 
 # Local Netlify folder
 .netlify
+
+# SEO audit cache
+.seo-cache/

@@ -40,6 +40,7 @@ export interface LayoutProps {
   title: string;
   description?: string;
   ogImage?: string;
+  canonicalPath?: string;
 }
 
 export interface SectionProps {
