@@ -1,0 +1,50 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { projects } from '../../data/projects';
+
+const hubspotProjects = projects.filter((project) =>
+  project.tags.some((tag) => tag.includes('HubSpot'))
+);
+const structuredData = {
+  '@type': 'ItemList',
+  name: 'HubSpot CMS portfolio projects',
+  itemListElement: hubspotProjects.map((project, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    name: project.title,
+    url: `https://felixmacaspac.dev/projects/${project.slug}/`,
+  })),
+};
+---
+
+<Layout
+  title="HubSpot Portfolio | Felix Macaspac"
+  description="Published HubSpot CMS demos with custom modules and editable page templates by Felix Macaspac."
+  canonicalPath="/hubspot/"
+  ogImage={hubspotProjects[0].image}
+  ogImageAlt={hubspotProjects[0].imageAlt}
+  pageType="CollectionPage"
+  structuredData={structuredData}
+>
+  <main class="min-h-screen">
+    <header class="max-w-2xl mx-auto px-6 pt-16 pb-16">
+      <a href="/" class="text-sm text-zinc-400 transition-colors hover:text-white">&larr; Felix Macaspac</a>
+      <p class="mt-12 text-xs font-medium uppercase tracking-widest text-zinc-400">Selected HubSpot work</p>
+      <h1 class="mt-3 text-3xl font-medium tracking-tight">HubSpot portfolio</h1>
+      <p class="mt-5 max-w-xl text-sm leading-relaxed text-zinc-300">
+        I build HubSpot CMS themes, editable modules, and page templates. Explore these two published demos on my HubSpot portal.
+      </p>
+    </header>
+
+    <section aria-labelledby="hubspot-projects" class="max-w-2xl mx-auto px-6 pb-20">
+      <h2 id="hubspot-projects" class="text-sm font-semibold mb-8">projects</h2>
+      <div class="space-y-12">
+        {hubspotProjects.map((project, index) => <ProjectCard project={project} index={index} />)}
+      </div>
+    </section>
+
+    <Footer />
+  </main>
+</Layout>

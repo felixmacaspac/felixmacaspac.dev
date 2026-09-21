@@ -7,15 +7,18 @@ const {
   title, 
   description = "Felix Macaspac is a remote HubSpot CMS and frontend developer for international teams, building custom HubSpot themes, modules, UI extensions, and React/TypeScript web applications.",
   ogImage = "/android-chrome-512x512.png",
+  ogImageAlt = "Felix Macaspac portfolio",
   canonicalPath = "/",
+  pageType = "ProfilePage",
+  structuredData,
 } = Astro.props satisfies LayoutProps;
 
 const siteUrl = "https://felixmacaspac.dev";
 const canonicalUrl = new URL(canonicalPath, siteUrl).toString();
 const ogImageUrl = new URL(ogImage, siteUrl).toString();
 const personSchema = {
-  "@context": "https://schema.org",
   "@type": "Person",
+  "@id": `${siteUrl}/#person`,
   name: "Felix Macaspac",
   url: siteUrl,
   image: new URL("/avatar-default.png", siteUrl).toString(),
@@ -25,7 +28,6 @@ const personSchema = {
     name: "Hububble",
     url: "https://hububble.com",
   },
-  alumniOf: "HubSpot Academy",
   sameAs: [
     "https://www.linkedin.com/in/felixmacaspac/",
     "https://github.com/felixmacaspac",
@@ -45,52 +47,28 @@ const personSchema = {
     "Next.js",
     "Frontend development",
   ],
-  hasOfferCatalog: {
-    "@type": "OfferCatalog",
-    name: "Focused HubSpot CMS and frontend development support",
-    itemListElement: [
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "HubSpot CMS theme and template development",
-        },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "HubSpot custom module development",
-        },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "HubSpot UI extensions and API integrations",
-        },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "React and TypeScript frontend development",
-        },
-      },
-    ],
-  },
 };
 
-const profilePageSchema = {
-  "@context": "https://schema.org",
-  "@type": "ProfilePage",
+const pageSchema = {
+  "@type": pageType,
+  "@id": `${canonicalUrl}#webpage`,
   url: canonicalUrl,
   name: title,
   description,
-  mainEntity: {
-    "@id": `${siteUrl}/#person`,
-    ...personSchema,
+  inLanguage: "en",
+  isPartOf: {
+    "@type": "WebSite",
+    "@id": `${siteUrl}/#website`,
+    name: "Felix Macaspac",
+    url: siteUrl,
   },
+  primaryImageOfPage: ogImageUrl,
+  mainEntity: structuredData ?? { "@id": `${siteUrl}/#person` },
+};
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [personSchema, pageSchema],
 };
 ---
 
@@ -107,31 +85,30 @@ const profilePageSchema = {
     <!-- end favicons -->
     <meta name="author" content="Felix Macaspac" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href={canonicalUrl} />    
+    <link rel="canonical" href={canonicalUrl} />
     <meta name="generator" content={Astro.generator} />
     <meta name="theme-color" content="#111111" />
     
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta
-      name="keywords"
-      content="Remote HubSpot CMS Developer, International HubSpot Developer, HubSpot CMS Developer, HubSpot Developer, HubL Developer, HubSpot Custom Module Developer, HubSpot UI Extension Developer, HubSpot API Integration Developer, Frontend Developer, React Developer, NextJS Developer, TypeScript Developer, Remote Frontend Developer"
-    />
-    <meta property="og:type" content="profile" />
+    <meta property="og:type" content={pageType === "ProfilePage" ? "profile" : "website"} />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="Felix Macaspac" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:image" content={ogImageUrl} />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:image:alt" content={ogImageAlt} />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImageUrl} />
+    <meta name="twitter:image:alt" content={ogImageAlt} />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
 
-    <script type="application/ld+json" set:html={JSON.stringify(profilePageSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
 
     <script is:inline src="https://www.googletagmanager.com/gtag/js?id=G-8NM441GEWH"></script>
     <script is:inline>

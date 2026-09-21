@@ -19,6 +19,15 @@ Credibility signals:
 - v0 Ambassador
 
 Website: https://felixmacaspac.dev/
+HubSpot portfolio: https://felixmacaspac.dev/hubspot/
+
+Selected project case studies:
+- Meridian & Cole, published HubSpot CMS law firm demo: https://felixmacaspac.dev/projects/meridian-cole/
+- Meridian Real Estate, published HubSpot CMS property demo: https://felixmacaspac.dev/projects/meridian-real-estate/
+- worththecals, live Philippine restaurant calorie directory: https://felixmacaspac.dev/projects/worththecals/
+- Bentodoro, live study timer and planning app: https://felixmacaspac.dev/projects/bentodoro/
+- NU GWA Calculator, live independent student grade calculator: https://felixmacaspac.dev/projects/gwa-calculator/
+
 LinkedIn: https://www.linkedin.com/in/felixmacaspac/
 GitHub: https://github.com/felixmacaspac
 HubSpot Community: https://community.hubspot.com/t5/user/viewprofilepage/user-id/489302

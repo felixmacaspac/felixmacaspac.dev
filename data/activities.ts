@@ -60,7 +60,7 @@ export const activities: Activity[] = [
     title: "HubSpot Architecture I: Data Models and APIs",
     type: "certification",
     description:
-      "Certified in HubSpot architecture, data models, and API integrations.",
+      "Completed HubSpot architecture training in data models and API integrations. Credential period ended July 2026.",
     organization: "HubSpot Academy",
     date: "June 2025 - July 2026",
   },

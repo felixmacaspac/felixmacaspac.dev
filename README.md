@@ -9,6 +9,8 @@ This repository contains the source code for my personal portfolio website, [fel
 - **Subtle Animations:** Scroll-based animations to enhance user experience.
 - **Showcase of Skills & Projects:** A place to highlight my work and expertise.
 
+The selected projects are defined in `data/projects.ts`. Each entry renders on the homepage, has a case study at `/projects/<slug>/`, and uses a screenshot in `public/projects/`. HubSpot entries also appear on `/hubspot/`. Keep the project status and external link labels accurate when updating a published demo or live product.
+
 ### 🛠️ Tech Stack
 
 - [Astro](https://astro.build/)

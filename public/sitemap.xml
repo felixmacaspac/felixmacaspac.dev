@@ -2,8 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://felixmacaspac.dev/</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
   </url>
+  <url>
+    <loc>https://felixmacaspac.dev/hubspot/</loc>
+  </url>
+  <url><loc>https://felixmacaspac.dev/projects/meridian-cole/</loc></url>
+  <url><loc>https://felixmacaspac.dev/projects/meridian-real-estate/</loc></url>
+  <url><loc>https://felixmacaspac.dev/projects/worththecals/</loc></url>
+  <url><loc>https://felixmacaspac.dev/projects/bentodoro/</loc></url>
+  <url><loc>https://felixmacaspac.dev/projects/gwa-calculator/</loc></url>
 </urlset>

@@ -1,0 +1,103 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Footer from '../../components/Footer.astro';
+import { projects } from '../../../data/projects';
+import type { Project } from '../../types';
+
+export function getStaticPaths() {
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+}
+
+interface Props {
+  project: Project;
+}
+
+const { project } = Astro.props;
+const canonicalPath = `/projects/${project.slug}/`;
+const related = projects.filter((item) => item.slug !== project.slug).slice(0, 2);
+const structuredData = {
+  '@type': 'CreativeWork',
+  name: project.title,
+  description: project.description,
+  image: `https://felixmacaspac.dev${project.image}`,
+  url: `https://felixmacaspac.dev${canonicalPath}`,
+  creator: { '@id': 'https://felixmacaspac.dev/#person' },
+  keywords: project.tags.join(', '),
+};
+---
+
+<Layout
+  title={`${project.title} | Project by Felix Macaspac`}
+  description={project.description}
+  ogImage={project.image}
+  ogImageAlt={project.imageAlt}
+  canonicalPath={canonicalPath}
+  pageType="WebPage"
+  structuredData={structuredData}
+>
+  <main class="min-h-screen">
+    <article class="max-w-2xl mx-auto px-6 pt-16 pb-20">
+      <nav aria-label="Breadcrumb" class="flex flex-wrap gap-2 text-sm text-zinc-400">
+        <a href="/" class="hover:text-white">Felix Macaspac</a>
+        <span aria-hidden="true">/</span>
+        <a href={project.category === 'HubSpot CMS theme' ? '/hubspot/' : '/#projects'} class="hover:text-white">{project.category === 'HubSpot CMS theme' ? 'HubSpot portfolio' : 'Projects'}</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page" class="text-zinc-200">{project.title}</span>
+      </nav>
+
+      <header class="pt-12">
+        <p class="text-xs font-medium uppercase tracking-widest text-zinc-400">{project.category}</p>
+        <h1 class="mt-3 text-3xl font-medium tracking-tight sm:text-4xl">{project.title}</h1>
+        <p class="mt-5 text-base leading-relaxed text-zinc-300">{project.description}</p>
+        <div class="mt-5 flex flex-wrap gap-x-2 gap-y-1">
+          {project.tags.map((tag) => <span class="text-xs text-zinc-400">{tag}</span>)}
+        </div>
+        <a href={project.link} target="_blank" rel="noopener noreferrer" class="mt-7 inline-block rounded-md border border-zinc-600 px-4 py-2 text-sm transition-colors hover:border-white hover:bg-zinc-900">{project.linkLabel} &nearr;</a>
+      </header>
+
+      <figure class="mt-12 overflow-hidden rounded-xl border border-zinc-800 bg-zinc-950">
+        <img src={project.image} alt={project.imageAlt} width={project.imageWidth} height={project.imageHeight} class="w-full h-auto" />
+        <figcaption class="border-t border-zinc-800 px-4 py-3 text-xs text-zinc-400">
+          {project.category === 'HubSpot CMS theme' ? 'Screenshot of the published HubSpot demo.' : 'Screenshot of the public website.'}
+        </figcaption>
+      </figure>
+
+      <dl class="mt-10 grid gap-6 border-y border-zinc-800 py-6 text-sm sm:grid-cols-2">
+        <div>
+          <dt class="text-zinc-400">My role</dt>
+          <dd class="mt-1 leading-relaxed text-zinc-100">{project.role}</dd>
+        </div>
+        <div>
+          <dt class="text-zinc-400">Current status</dt>
+          <dd class="mt-1 leading-relaxed text-zinc-100">{project.status}</dd>
+        </div>
+      </dl>
+
+      <div class="mt-10 space-y-9 text-sm leading-relaxed text-zinc-300">
+        <section aria-labelledby="challenge-heading">
+          <h2 id="challenge-heading" class="mb-3 text-base font-medium text-white">The problem</h2>
+          <p>{project.problem}</p>
+        </section>
+        <section aria-labelledby="approach-heading">
+          <h2 id="approach-heading" class="mb-3 text-base font-medium text-white">What I built</h2>
+          <p>{project.approach}</p>
+        </section>
+        <section aria-labelledby="outcome-heading">
+          <h2 id="outcome-heading" class="mb-3 text-base font-medium text-white">Current outcome</h2>
+          <p>{project.outcome}</p>
+        </section>
+      </div>
+
+      <aside class="mt-16 border-t border-zinc-800 pt-7" aria-labelledby="more-projects-heading">
+        <h2 id="more-projects-heading" class="text-sm font-semibold">More projects</h2>
+        <div class="mt-4 flex flex-col gap-3 text-sm">
+          {related.map((item) => <a href={`/projects/${item.slug}/`} class="text-zinc-300 underline underline-offset-4 hover:text-white">{item.title} &rarr;</a>)}
+        </div>
+      </aside>
+    </article>
+    <Footer />
+  </main>
+</Layout>

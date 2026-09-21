@@ -1,0 +1,45 @@
+---
+import type { Project } from '../types';
+
+interface Props {
+  project: Project;
+  index: number;
+}
+
+const { project, index } = Astro.props;
+const isHubSpot = project.category === 'HubSpot CMS theme';
+---
+
+<article class="border-t border-zinc-700/70 pt-6 sm:pt-8">
+  <div class="mb-4 flex items-center justify-between gap-4 text-[11px] font-medium uppercase tracking-[0.18em] text-zinc-400">
+    <span>{String(index + 1).padStart(2, '0')} / {project.category}</span>
+    <span class="inline-flex shrink-0 items-center gap-2 normal-case tracking-normal text-zinc-300">
+      <span class="h-1.5 w-1.5 rounded-full bg-emerald-400" aria-hidden="true"></span>
+      {isHubSpot ? 'Live on HubSpot' : 'Live project'}
+    </span>
+  </div>
+
+  <a href={project.link} target="_blank" rel="noopener noreferrer" class="group block overflow-hidden rounded-lg border border-zinc-700 bg-zinc-900" aria-label={`View ${project.title} ${isHubSpot ? 'HubSpot demo' : 'website'}`}>
+    <img
+      src={project.image}
+      alt={project.imageAlt}
+      width={project.imageWidth}
+      height={project.imageHeight}
+      loading="lazy"
+      decoding="async"
+      class="aspect-[16/10] w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.025]"
+    />
+  </a>
+  <div class="mt-5 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+    <div class="max-w-md">
+      <h3 class="text-2xl font-medium tracking-tight sm:text-3xl">
+        <a href={`/projects/${project.slug}/`} class="transition-colors hover:text-zinc-300">{project.title}</a>
+      </h3>
+      <p class="mt-2 text-sm leading-relaxed text-zinc-400">{project.description}</p>
+    </div>
+    <div class="flex shrink-0 flex-wrap gap-2 text-xs font-medium">
+      <a href={project.link} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-full bg-white px-4 py-2.5 text-zinc-950 transition-colors hover:bg-zinc-200">{project.linkLabel} &nearr;</a>
+      <a href={`/projects/${project.slug}/`} class="inline-flex items-center justify-center rounded-full border border-zinc-600 px-4 py-2.5 text-white transition-colors hover:border-zinc-300 hover:bg-zinc-900">Case study &rarr;</a>
+    </div>
+  </div>
+</article>

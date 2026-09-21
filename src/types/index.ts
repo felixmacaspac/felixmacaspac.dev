@@ -8,9 +8,21 @@ export interface Experience {
 }
 
 export interface Project {
+  slug: string;
   title: string;
   description: string;
   link: string;
+  linkLabel: string;
+  image: string;
+  imageAlt: string;
+  imageWidth: number;
+  imageHeight: number;
+  category: string;
+  status: string;
+  role: string;
+  problem: string;
+  approach: string;
+  outcome: string;
   tags: string[];
 }
 
@@ -40,7 +52,10 @@ export interface LayoutProps {
   title: string;
   description?: string;
   ogImage?: string;
+  ogImageAlt?: string;
   canonicalPath?: string;
+  pageType?: "ProfilePage" | "CollectionPage" | "WebPage";
+  structuredData?: Record<string, unknown>;
 }
 
 export interface SectionProps {
