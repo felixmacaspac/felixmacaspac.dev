@@ -26,5 +26,8 @@ pnpm-debug.log*
 # Local Netlify folder
 .netlify
 
+# Local Cloudflare state
+.wrangler/
+
 # SEO audit cache
 .seo-cache/

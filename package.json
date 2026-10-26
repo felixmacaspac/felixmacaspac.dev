@@ -9,10 +9,12 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/netlify": "^6.5.10",
     "@astrojs/ts-plugin": "^1.10.4",
     "@tailwindcss/vite": "^4.1.12",
     "astro": "^5.16.0",
     "tailwindcss": "^4.1.12"
+  },
+  "devDependencies": {
+    "wrangler": "4.152.0"
   }
 }

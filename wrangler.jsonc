@@ -1,0 +1,8 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "felixmacaspac-dev",
+  "compatibility_date": "2026-10-26",
+  "assets": {
+    "directory": "./dist"
+  }
+}

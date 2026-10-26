@@ -30,6 +30,22 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
+## Cloudflare Workers deployment
+
+Use Node.js 22, as specified in `.nvmrc`, and install dependencies with `npm ci`.
+The site is fully static and does not require an Astro hosting adapter.
+`wrangler.jsonc` configures Workers to serve the generated `dist/` directory.
+
+In Cloudflare Workers Builds, use:
+
+- Build command: `npm run build`
+- Deploy command: `npx wrangler deploy`
+- Build variable: `NODE_VERSION=22` if an existing variable overrides `.nvmrc`
+
+The Worker name in `wrangler.jsonc` must match the Worker connected to the repository.
+To validate deployment packaging locally without uploading, run
+`npm run build` followed by `npx wrangler deploy --dry-run`.
+
 ## 🌐 Connect
 
 - **Website:** felixmacaspac.dev
